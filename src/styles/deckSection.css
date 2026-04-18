@@ -1,0 +1,234 @@
+/* ====================== DECK SECTION ====================== */
+
+.card-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.deck-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+}
+
+.card-wrap {
+    perspective: 600px;
+    flex-shrink: 0;
+}
+
+.playing-card {
+    width: 92px;
+    height: 130px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.75),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.2s, transform 0.1s;
+    border: 1px solid rgba(200,152,14,0.25);
+}
+
+.playing-card:active {
+    cursor: grabbing;
+}
+
+.playing-card:hover {
+    box-shadow: 0 10px 28px rgba(0,0,0,0.85);
+}
+
+.playing-card.flip {
+    animation: cardFlip 450ms ease-in-out;
+}
+
+@keyframes cardFlip {
+    0%   { transform: rotateY(0deg); }
+    45%  { transform: rotateY(95deg); }
+    55%  { transform: rotateY(85deg); }
+    100% { transform: rotateY(0deg); }
+}
+
+/* Карта рубашкой вверх */
+.card-back {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2a1a08, #3d2510);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+}
+
+.card-back::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 2px solid rgba(200,152,14,0.45);
+    border-radius: 4px;
+}
+
+.card-back-pat {
+    position: absolute;
+    inset: 0;
+    background-image:
+            repeating-linear-gradient(45deg, rgba(200,152,14,0.08) 0, rgba(200,152,14,0.08) 3px, transparent 3px, transparent 12px),
+            repeating-linear-gradient(-45deg, rgba(200,152,14,0.08) 0, rgba(200,152,14,0.08) 3px, transparent 3px, transparent 12px);
+    opacity: 0.85;
+}
+
+/* Лицевая сторона карты */
+.card-face {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    position: relative;
+    border-radius: 8px;
+    background: #f8f1e3;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.red .card-face { color: var(--suit-h); }
+.black .card-face { color: #1a1a2e; }
+.gold .card-face { color: #c8980e; }
+
+/* Уголки карты */
+.c-corner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    gap: 1px;
+    font-weight: 900;
+}
+
+.c-corner.tl { top: 6px; left: 8px; }
+.c-corner.br { bottom: 6px; right: 8px; transform: rotate(180deg); }
+
+.c-rank { font-size: 0.92rem; }
+.c-suit { font-size: 0.78rem; line-height: 1; }
+
+/* Центр карты */
+.c-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.c-big { font-size: 2.8rem; line-height: 1; margin-bottom: 4px; }
+.c-mid { font-size: 1rem; font-weight: 900; }
+
+/* Полоска внизу */
+.c-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 0 0 8px 8px;
+    opacity: 0.65;
+}
+
+/* Информация о карте */
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-name-lbl {
+    font-size: 0.95rem;
+    color: var(--gold-pale);
+    font-weight: bold;
+    min-height: 1.35em;
+    font-family: 'Crimson Pro', Georgia, serif;
+    word-break: break-word;
+}
+
+.deck-cnt {
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.drop-hint {
+    font-size: 0.62rem;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+/* Кнопки */
+.draw-btn {
+    padding: 9px 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(200,152,14,0.55);
+    background: rgba(200,152,14,0.18);
+    color: var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.draw-btn:active {
+    background: rgba(200,152,14,0.35);
+    transform: translateY(1px);
+}
+
+.reset-deck-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(200,152,14,0.3);
+    background: rgba(139,105,30,0.12);
+    color: var(--muted);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.reset-deck-btn:active {
+    background: rgba(200,152,14,0.25);
+    color: var(--gold-light);
+}
+
+/* История */
+.hist-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 68px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.chip {
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 0.76rem;
+    font-weight: bold;
+    background: rgba(139,105,30,0.12);
+    border: 1px solid var(--border);
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.chip.red   { color: #ff8888; border-color: rgba(139,26,26,0.4); }
+.chip.black { color: #d0c8e8; border-color: rgba(139,105,30,0.35); }
+.chip.gold  { color: #ffd700; border-color: rgba(200,152,14,0.5); }
+.chip.joker { color: var(--gold-pale); border-color: rgba(200,152,14,0.45); background: rgba(200,152,14,0.1); }

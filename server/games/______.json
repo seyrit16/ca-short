@@ -1,0 +1,5280 @@
+{
+  "id": "game_1776360907684_qb011ci5d",
+  "name": "Абобус",
+  "maxTurns": 120,
+  "currentTurn": 4,
+  "currentPlayer": "player1",
+  "status": "active",
+  "createdAt": 1776360907684,
+  "numCharacters": 5,
+  "player1": {
+    "color": "#c0392b",
+    "name": "seYrit",
+    "captures": {
+      "normal": 21,
+      "permanent": 3
+    },
+    "territory": 29,
+    "capturePoints": 10
+  },
+  "player2": {
+    "color": "#2980b9",
+    "name": "оп",
+    "captures": {
+      "normal": 9,
+      "permanent": 19
+    },
+    "territory": 33,
+    "capturePoints": 10
+  },
+  "board": [
+    [
+      {
+        "x": 0,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 0,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 0,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 3,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 3,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 3,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 4,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776514729136,
+          "placedBy": "player2"
+        }
+      },
+      {
+        "x": 15,
+        "y": 4,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 4,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 4,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776514721185,
+          "placedBy": "player2"
+        }
+      },
+      {
+        "x": 15,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 5,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 5,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 6,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 6,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": {
+          "type": "chest",
+          "placedAt": 1776514332259,
+          "placedBy": "system"
+        }
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 7,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": {
+          "type": "monster",
+          "placedAt": 1776515007650,
+          "placedBy": "player1"
+        }
+      },
+      {
+        "x": 8,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 7,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": {
+          "type": "rock",
+          "placedAt": 1776515004667,
+          "placedBy": "player1"
+        }
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "type": "river",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 8,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 8,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 9,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 9,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 9,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 9,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": {
+          "type": "camp",
+          "placedAt": 1776514712626,
+          "placedBy": "player2"
+        }
+      },
+      {
+        "x": 14,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 10,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 10,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 11,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 11,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 11,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 11,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 12,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 12,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 13,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 13,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 14,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 14,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 15,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 16,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "chest",
+          "placedAt": 1776514332259,
+          "placedBy": "system"
+        }
+      },
+      {
+        "x": 2,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 16,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 16,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 17,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 17,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": {
+          "type": "chest",
+          "placedAt": 1776514332259,
+          "placedBy": "system"
+        }
+      },
+      {
+        "x": 7,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 18,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 19,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 19,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 19,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 19,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 20,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 20,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 20,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 20,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 21,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 21,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 21,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 21,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 21,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 22,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 22,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 22,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 23,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 23,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 23,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 23,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 23,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 23,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      }
+    ]
+  ],
+  "units": [
+    {
+      "id": "p1_unit_0",
+      "player": "player1",
+      "type": "character",
+      "emoji": "🙂",
+      "icon": "/assets/characters/1.png",
+      "x": 3,
+      "y": 16,
+      "name": "Аблабла",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true
+    },
+    {
+      "id": "p1_unit_1",
+      "player": "player1",
+      "type": "character",
+      "emoji": "🙂",
+      "icon": "/assets/characters/3.png",
+      "x": 4,
+      "y": 22,
+      "name": "Телеметрия",
+      "hp": 10,
+      "maxHp": 12,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
+      "items": {
+        "teleport": 1,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true
+    },
+    {
+      "id": "p1_unit_2",
+      "player": "player1",
+      "type": "character",
+      "emoji": "🙂",
+      "icon": "/assets/characters/neir.png",
+      "x": 6,
+      "y": 13,
+      "name": "Пипирка",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true
+    },
+    {
+      "id": "p1_unit_3",
+      "player": "player1",
+      "type": "character",
+      "emoji": "🙂",
+      "icon": "/assets/characters/fire.png",
+      "x": 0,
+      "y": 12,
+      "name": "Палунна",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
+      "items": {
+        "teleport": 1,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true
+    },
+    {
+      "id": "p1_unit_4",
+      "player": "player1",
+      "type": "character",
+      "emoji": "🙂",
+      "icon": "/assets/characters/10.png",
+      "x": 0,
+      "y": 23,
+      "name": "Полка",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 3,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true
+    },
+    {
+      "id": "p2_unit_0",
+      "player": "player2",
+      "type": "character",
+      "emoji": "🙂",
+      "x": 8,
+      "y": 10,
+      "name": "Дельфинио",
+      "hp": 22,
+      "maxHp": 22,
+      "attack": 12,
+      "defense": 5,
+      "capture": 0,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true,
+      "icon": "/assets/characters/icon_1776361035014_fbt2rf5m.png"
+    },
+    {
+      "id": "p2_unit_1",
+      "player": "player2",
+      "type": "character",
+      "emoji": "🙂",
+      "x": 15,
+      "y": 5,
+      "name": "Киточад",
+      "hp": 23,
+      "maxHp": 23,
+      "attack": 12,
+      "defense": 10,
+      "capture": 4,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true,
+      "icon": "/assets/characters/icon_1776361044748_0o7voloo.png"
+    },
+    {
+      "id": "p2_unit_2",
+      "player": "player2",
+      "type": "character",
+      "emoji": "🙂",
+      "x": 23,
+      "y": 1,
+      "name": "Очка Саурона",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true,
+      "icon": "/assets/characters/icon_1776361050343_sz93d239.png"
+    },
+    {
+      "id": "p2_unit_3",
+      "player": "player2",
+      "type": "character",
+      "emoji": "🙂",
+      "x": 22,
+      "y": 0,
+      "name": "Седой Онанист",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 3,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true,
+      "icon": "/assets/characters/icon_1776361056245_mvo13n6d.png"
+    },
+    {
+      "id": "p2_unit_4",
+      "player": "player2",
+      "type": "character",
+      "emoji": "🙂",
+      "x": 23,
+      "y": 0,
+      "name": "Глыбус",
+      "hp": 10,
+      "maxHp": 10,
+      "attack": 5,
+      "defense": 5,
+      "capture": 3,
+      "items": {
+        "teleport": 0,
+        "camp": 0,
+        "returnStone": 0
+      },
+      "alive": true,
+      "icon": "/assets/characters/icon_1776361080773_jy581hrg.png"
+    }
+  ],
+  "objects": [],
+  "events": [
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4], Σ=4",
+      "player": "player2",
+      "timestamp": 1776362261310
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [3, 2], Σ=5",
+      "player": "player2",
+      "timestamp": 1776362263239
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 5, 2], Σ=11",
+      "player": "player2",
+      "timestamp": 1776362265285
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [5], Σ=5",
+      "player": "player2",
+      "timestamp": 1776362269246
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [5], Σ=5",
+      "player": "player2",
+      "timestamp": 1776362270305
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2, 4, 5, 6, 2, 6], Σ=25",
+      "player": "player2",
+      "timestamp": 1776362273585
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [8, 4], Σ=12",
+      "player": "player2",
+      "timestamp": 1776362280113
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [7, 4, 8, 5], Σ=24",
+      "player": "player2",
+      "timestamp": 1776362281996
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [65], Σ=65",
+      "player": "player2",
+      "timestamp": 1776362284750
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Контратака",
+      "player": "player2",
+      "timestamp": 1776362293035
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player2",
+      "timestamp": 1776362300059
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Атака прошла",
+      "player": "player2",
+      "timestamp": 1776362330273
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Блок",
+      "player": "player2",
+      "timestamp": 1776362351412
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Атака прошла",
+      "player": "player2",
+      "timestamp": 1776362356350
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Крит. урон",
+      "player": "player2",
+      "timestamp": 1776362362556
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: poison",
+      "player": "player1",
+      "timestamp": 1776362580907
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: heal",
+      "player": "player2",
+      "timestamp": 1776362581331
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: camp",
+      "player": "player2",
+      "timestamp": 1776362583657
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: buffdebuff",
+      "player": "player2",
+      "timestamp": 1776362585015
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: camp",
+      "player": "player2",
+      "timestamp": 1776362586144
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: poison",
+      "player": "player2",
+      "timestamp": 1776362587777
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: buffdebuff",
+      "player": "player2",
+      "timestamp": 1776362588973
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: heal",
+      "player": "player2",
+      "timestamp": 1776362591132
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: teleport",
+      "player": "player2",
+      "timestamp": 1776362592691
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: buff",
+      "player": "player2",
+      "timestamp": 1776362594074
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: teleport",
+      "player": "player2",
+      "timestamp": 1776362595681
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [5, 5, 3, 17, 77], Σ=107",
+      "player": "player2",
+      "timestamp": 1776362603582
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [3, 4, 8, 6], Σ=21",
+      "player": "player2",
+      "timestamp": 1776362684015
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: heal",
+      "player": "player2",
+      "timestamp": 1776362694743
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: teleport",
+      "player": "player1",
+      "timestamp": 1776364569082
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [60, 73, 16], Σ=149",
+      "player": "player1",
+      "timestamp": 1776364899752
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 6, 7], Σ=17",
+      "player": "player2",
+      "timestamp": 1776365706873
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2, 9], Σ=11",
+      "player": "player2",
+      "timestamp": 1776365709270
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: debuff",
+      "player": "player2",
+      "timestamp": 1776365714553
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [6, 7, 1], Σ=14",
+      "player": "player2",
+      "timestamp": 1776513498918
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: teleport",
+      "player": "player2",
+      "timestamp": 1776514078876
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: buff",
+      "player": "player1",
+      "timestamp": 1776514087434
+    },
+    {
+      "type": "secret",
+      "message": "player2 открыл сундук: heal",
+      "player": "player2",
+      "timestamp": 1776514088387
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: debuff",
+      "player": "player1",
+      "timestamp": 1776516271944
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: heal",
+      "player": "player1",
+      "timestamp": 1776516274079
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: buff",
+      "player": "player1",
+      "timestamp": 1776516276040
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: heal",
+      "player": "player1",
+      "timestamp": 1776516277691
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: poison",
+      "player": "player1",
+      "timestamp": 1776516287571
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: buffdebuff",
+      "player": "player1",
+      "timestamp": 1776516288512
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: debuff",
+      "player": "player1",
+      "timestamp": 1776516289266
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: heal",
+      "player": "player1",
+      "timestamp": 1776516289946
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: debuff",
+      "player": "player1",
+      "timestamp": 1776516290501
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: poison",
+      "player": "player1",
+      "timestamp": 1776516291085
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: camp",
+      "player": "player1",
+      "timestamp": 1776516291718
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: provocation",
+      "player": "player1",
+      "timestamp": 1776516292274
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: heal",
+      "player": "player1",
+      "timestamp": 1776516295853
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: provocation",
+      "player": "player1",
+      "timestamp": 1776516296527
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: provocation",
+      "player": "player1",
+      "timestamp": 1776516297019
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: buff",
+      "player": "player1",
+      "timestamp": 1776516297783
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: provocation",
+      "player": "player1",
+      "timestamp": 1776516298428
+    },
+    {
+      "type": "secret",
+      "message": "player1 открыл сундук: egoStrike",
+      "player": "player1",
+      "timestamp": 1776516298957
+    }
+  ],
+  "extras": {
+    "queueByPlayer": {
+      "player1": [
+        "p1_unit_4",
+        "p1_unit_1",
+        "p1_unit_2",
+        "p1_unit_0",
+        "p1_unit_3"
+      ],
+      "player2": [
+        "p2_unit_0",
+        "p2_unit_1",
+        "p2_unit_2",
+        "p2_unit_3",
+        "p2_unit_4"
+      ]
+    },
+    "resources": {
+      "player1": {
+        "trees": 0,
+        "redJokers": 0,
+        "blackJokers": 0,
+        "heal": 0,
+        "buffDebuff": 0,
+        "provocation": 0,
+        "egoStrike": 0
+      },
+      "player2": {
+        "trees": 0,
+        "redJokers": 0,
+        "blackJokers": 0,
+        "heal": 0,
+        "buffDebuff": 0,
+        "provocation": 0,
+        "egoStrike": 0
+      }
+    },
+    "monster": {
+      "name": "Монстр",
+      "hp": 10,
+      "attack": 8,
+      "defense": 0
+    },
+    "deck": {
+      "remaining": [
+        {
+          "id": "J_hearts",
+          "label": "J♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_clubs",
+          "label": "3♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "7_clubs",
+          "label": "7♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "9_diamonds",
+          "label": "9♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "10_spades",
+          "label": "10♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "5_clubs",
+          "label": "5♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "6_hearts",
+          "label": "6♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "8_diamonds",
+          "label": "8♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "K_clubs",
+          "label": "K♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "5_spades",
+          "label": "5♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "7_diamonds",
+          "label": "7♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "joker_red",
+          "label": "RJ",
+          "suit": "joker",
+          "color": "red"
+        },
+        {
+          "id": "A_clubs",
+          "label": "A♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "K_spades",
+          "label": "K♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "2_hearts",
+          "label": "2♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "Q_diamonds",
+          "label": "Q♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "3_diamonds",
+          "label": "3♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "J_clubs",
+          "label": "J♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "10_clubs",
+          "label": "10♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "Q_clubs",
+          "label": "Q♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "4_clubs",
+          "label": "4♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "3_spades",
+          "label": "3♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "5_diamonds",
+          "label": "5♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "A_hearts",
+          "label": "A♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "K_diamonds",
+          "label": "K♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "10_diamonds",
+          "label": "10♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "9_clubs",
+          "label": "9♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "6_diamonds",
+          "label": "6♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "2_diamonds",
+          "label": "2♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "A_diamonds",
+          "label": "A♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "9_hearts",
+          "label": "9♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "6_spades",
+          "label": "6♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "8_clubs",
+          "label": "8♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "10_hearts",
+          "label": "10♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_hearts",
+          "label": "3♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "K_hearts",
+          "label": "K♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "8_hearts",
+          "label": "8♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "Q_hearts",
+          "label": "Q♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "6_clubs",
+          "label": "6♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "9_spades",
+          "label": "9♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "5_hearts",
+          "label": "5♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "J_diamonds",
+          "label": "J♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "8_spades",
+          "label": "8♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "Q_spades",
+          "label": "Q♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "2_spades",
+          "label": "2♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "4_spades",
+          "label": "4♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "2_clubs",
+          "label": "2♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "joker_black",
+          "label": "BJ",
+          "suit": "joker",
+          "color": "black"
+        },
+        {
+          "id": "J_spades",
+          "label": "J♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "4_hearts",
+          "label": "4♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "7_spades",
+          "label": "7♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "A_spades",
+          "label": "A♠",
+          "suit": "spades",
+          "color": "black"
+        }
+      ],
+      "discard": [
+        {
+          "id": "4_diamonds",
+          "label": "4♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "7_hearts",
+          "label": "7♥",
+          "suit": "hearts",
+          "color": "red"
+        }
+      ],
+      "current": {
+        "id": "7_hearts",
+        "label": "7♥",
+        "suit": "hearts",
+        "color": "red"
+      },
+      "history": [
+        {
+          "id": "4_diamonds",
+          "label": "4♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "7_hearts",
+          "label": "7♥",
+          "suit": "hearts",
+          "color": "red"
+        }
+      ]
+    },
+    "moveState": {
+      "turnKey": "player1:4",
+      "byUnit": {}
+    }
+  },
+  "updatedAt": 1776516299156
+}
