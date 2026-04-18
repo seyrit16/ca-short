@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import type { DeckState } from '../types'
 
 interface DeckSectionProps {
@@ -14,6 +15,17 @@ function colorClass(color: 'red' | 'black' | 'gold' | undefined): string {
 export default function DeckSection(props: DeckSectionProps) {
   const current = props.deck.current
   const history = props.deck.history.slice(-8)
+  const [isDrawing, setIsDrawing] = useState(false)
+  const lastCardIdRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    const nextId = current?.id ?? null
+    if (!nextId || nextId === lastCardIdRef.current) return
+    lastCardIdRef.current = nextId
+    setIsDrawing(true)
+    const timer = setTimeout(() => setIsDrawing(false), 460)
+    return () => clearTimeout(timer)
+  }, [current?.id])
 
   return (
     <section className="util-card">
@@ -23,7 +35,7 @@ export default function DeckSection(props: DeckSectionProps) {
         <div className="deck-row">
           <div className="card-wrap">
             <button
-              className="playing-card"
+              className={`playing-card ${isDrawing ? 'flip' : ''}`}
               onClick={props.onDeckDraw}
               title="Вытянуть карту"
               draggable={Boolean(current)}

@@ -4924,24 +4924,6 @@
     "deck": {
       "remaining": [
         {
-          "id": "J_hearts",
-          "label": "J♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "3_clubs",
-          "label": "3♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "7_clubs",
-          "label": "7♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
           "id": "9_diamonds",
           "label": "9♦",
           "suit": "diamonds",
@@ -5248,13 +5230,31 @@
           "label": "7♥",
           "suit": "hearts",
           "color": "red"
+        },
+        {
+          "id": "J_hearts",
+          "label": "J♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_clubs",
+          "label": "3♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "7_clubs",
+          "label": "7♣",
+          "suit": "clubs",
+          "color": "black"
         }
       ],
       "current": {
-        "id": "7_hearts",
-        "label": "7♥",
-        "suit": "hearts",
-        "color": "red"
+        "id": "7_clubs",
+        "label": "7♣",
+        "suit": "clubs",
+        "color": "black"
       },
       "history": [
         {
@@ -5268,6 +5268,24 @@
           "label": "7♥",
           "suit": "hearts",
           "color": "red"
+        },
+        {
+          "id": "J_hearts",
+          "label": "J♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_clubs",
+          "label": "3♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "7_clubs",
+          "label": "7♣",
+          "suit": "clubs",
+          "color": "black"
         }
       ]
     },
@@ -5276,5 +5294,5 @@
       "byUnit": {}
     }
   },
-  "updatedAt": 1776516299156
+  "updatedAt": 1776517404461
 }
