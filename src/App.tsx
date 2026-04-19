@@ -47,8 +47,9 @@ function App() {
   const [error, setError] = useState('')
   const [topNotice, setTopNotice] = useState('')
   const [lastSeenEventTs, setLastSeenEventTs] = useState(0)
+  const gameRef = useRef<Game | null>(null)
+  const pendingMutationsRef = useRef<Array<(draft: Game) => boolean>>([])
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const pendingSaveRef = useRef<Game | null>(null)
   const isFlushingSaveRef = useRef(false)
 
   useEffect(() => {
@@ -61,6 +62,10 @@ function App() {
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
     }
   }, [])
+
+  useEffect(() => {
+    gameRef.current = game
+  }, [game])
 
   useEffect(() => {
     if (viewMode !== 'game' || !game) return
@@ -104,6 +109,7 @@ function App() {
 
           setGame((prev) => {
             if (!prev) return payload.game as Game
+            if (pendingMutationsRef.current.length === 0) return payload.game as Game
             const prevUpdated = prev.updatedAt ?? 0
             const nextUpdated = payload.game?.updatedAt ?? 0
             if (nextUpdated > prevUpdated) return payload.game as Game
@@ -183,6 +189,7 @@ function App() {
         return
       }
       loaded.extras = GameUtils.ensureExtras(loaded)
+      pendingMutationsRef.current = []
       setGame(loaded)
       setCurrentPlayer(parsed.player)
       setStatsPlayer(parsed.player)
@@ -213,14 +220,38 @@ function App() {
     isFlushingSaveRef.current = true
 
     try {
-      while (pendingSaveRef.current) {
-        const next = pendingSaveRef.current
-        pendingSaveRef.current = null
+      while (pendingMutationsRef.current.length > 0) {
+        const queuedMutations = [...pendingMutationsRef.current]
+        pendingMutationsRef.current = []
+        const currentGame = gameRef.current
+        if (!currentGame) break
+
         try {
-          await API.saveGame(next)
+          const latest = await API.getGame(currentGame.name)
+          if (!latest) {
+            showError('Игра не найдена на сервере')
+            break
+          }
+          latest.extras = GameUtils.ensureExtras(latest)
+          const merged = cloneGame(latest)
+          merged.extras = GameUtils.ensureExtras(merged)
+
+          let changed = false
+          queuedMutations.forEach((mutate) => {
+            changed = mutate(merged) || changed
+          })
+
+          if (!changed) {
+            setGame(latest)
+            continue
+          }
+
+          const normalized = normalizeGameForSave(merged)
+          await API.saveGame(normalized)
+          setGame(normalized)
         } catch {
           showError('Не удалось сохранить игру')
-          pendingSaveRef.current = next
+          pendingMutationsRef.current = [...queuedMutations, ...pendingMutationsRef.current]
           break
         }
       }
@@ -229,8 +260,7 @@ function App() {
     }
   }
 
-  function queueSave(nextGame: Game): void {
-    pendingSaveRef.current = nextGame
+  function queueSave(): void {
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
     saveTimerRef.current = setTimeout(() => {
       void flushPendingSaves()
@@ -238,25 +268,28 @@ function App() {
   }
 
   async function saveAndSet(nextGame: Game): Promise<void> {
-    const normalized = normalizeGameForSave(nextGame)
-    setGame(normalized)
-    pendingSaveRef.current = normalized
     if (saveTimerRef.current) {
       clearTimeout(saveTimerRef.current)
       saveTimerRef.current = null
     }
     await flushPendingSaves()
+
+    const normalized = normalizeGameForSave(nextGame)
+    setGame(normalized)
+    await API.saveGame(normalized)
   }
 
   function updateLocal(updater: (draft: Game) => boolean): void {
-    if (!game) return
-    const draft = cloneGame(game)
+    const base = gameRef.current
+    if (!base) return
+    const draft = cloneGame(base)
     draft.extras = GameUtils.ensureExtras(draft)
     const changed = updater(draft)
     if (!changed) return
     const normalized = normalizeGameForSave(draft)
     setGame(normalized)
-    queueSave(normalized)
+    pendingMutationsRef.current.push(updater)
+    queueSave()
   }
 
   function finalizePendingMovement(): void {
@@ -270,11 +303,12 @@ function App() {
     updateLocal((draft) => {
       const extras = GameUtils.ensureExtras(draft)
       extras.moveState = GameUtils.ensureMoveState(draft, extras.moveState)
+      const myResources = extras.resources[currentPlayer]
       const unit = draft.units.find((entry) => entry.id === movingUnitId)
       if (!unit) return false
 
       const currentPlayerData = draft[currentPlayer]
-      if (!currentPlayerData) return false
+      if (!currentPlayerData || !myResources) return false
 
       const destination = plannedPath[plannedPath.length - 1]
       let state = extras.moveState.byUnit[unit.id]
@@ -319,6 +353,7 @@ function App() {
         }
         if (cell.object.type === 'tree' && !cell.capture) {
           cell.object = null
+          myResources.trees += 1
         }
       })
 
@@ -347,6 +382,7 @@ function App() {
       created.extras = GameUtils.ensureExtras(created)
       created.updatedAt = Date.now()
       await API.createGame(created)
+      pendingMutationsRef.current = []
       setGame(created)
       setCurrentPlayer('player1')
       setStatsPlayer('player1')
@@ -400,6 +436,7 @@ function App() {
       }
 
       setGame(nextGame)
+      pendingMutationsRef.current = []
       setCurrentPlayer(asPlayer)
       setStatsPlayer(asPlayer)
       setLastSeenEventTs(Date.now())
@@ -415,6 +452,7 @@ function App() {
 
   function handleBackHome(): void {
     finalizePendingMovement()
+    pendingMutationsRef.current = []
     setViewMode('home')
     clearSession()
   }
@@ -495,8 +533,11 @@ function App() {
     }
 
     updateLocal((draft) => {
+      const extras = GameUtils.ensureExtras(draft)
+      const myResources = extras.resources[currentPlayer]
       const unit = draft.units.find((entry) => entry.id === unitId)
       if (!unit || unit.player !== currentPlayer || !unit.alive) return false
+      if (!myResources) return false
       unit.items ??= { teleport: 0, camp: 0, returnStone: 0 }
       if ((unit.items.teleport ?? 0) <= 0) return false
       if (!GameUtils.isPassable(draft, x, y, unit.player)) return false
@@ -509,6 +550,7 @@ function App() {
         cell.object = null
       } else if (cell?.object?.type === 'tree' && !cell.capture) {
         cell.object = null
+        myResources.trees += 1
       }
 
       unit.x = x
@@ -516,6 +558,7 @@ function App() {
       unit.items.teleport = Math.max(0, unit.items.teleport - 1)
       setSelectedUnitId(null)
       setPathCells([])
+      draft.extras = extras
       return true
     })
   }
@@ -536,7 +579,7 @@ function App() {
       draft.extras = extras
 
       draft.currentPlayer = draft.currentPlayer === 'player1' ? 'player2' : 'player1'
-      if (draft.currentPlayer === 'player1') draft.currentTurn += 1
+      draft.currentTurn += 1
 
       if (draft.currentTurn > draft.maxTurns) {
         draft.status = 'ended'
@@ -545,9 +588,9 @@ function App() {
         else draft.winner = 'tie'
       }
 
-      draft.units.forEach((unit) => {
-        if (unit.player === draft.currentPlayer) unit.capture = Math.min(3, unit.capture + 1)
-      })
+      // draft.units.forEach((unit) => {
+      //   if (unit.player === draft.currentPlayer) unit.capture = Math.min(3, unit.capture + 1)
+      // })
 
       setSelectedUnitId(null)
       setPathCells([])
@@ -594,6 +637,26 @@ function App() {
       if (!unit) return false
       unit.items ??= { teleport: 0, camp: 0, returnStone: 0 }
       unit.items[item] = Math.max(0, (unit.items[item] ?? 0) + delta)
+      return true
+    })
+  }
+
+  function healUnitByDrop(unitId: string, mode: 'full' | 'fixed', amount?: number): void {
+    updateLocal((draft) => {
+      const unit = draft.units.find((entry) => entry.id === unitId)
+      if (!unit) return false
+
+      if (mode === 'full') {
+        if (unit.hp >= unit.maxHp) return false
+        unit.hp = unit.maxHp
+        unit.alive = true
+        return true
+      }
+
+      const heal = Math.max(0, Math.floor(amount ?? 0))
+      if (heal <= 0 || unit.hp >= unit.maxHp) return false
+      unit.hp = Math.min(unit.maxHp, unit.hp + heal)
+      unit.alive = true
       return true
     })
   }
@@ -900,6 +963,8 @@ function App() {
   function handleDeckDraw(): void {
     updateLocal((draft) => {
       const extras = GameUtils.ensureExtras(draft)
+      const myResources = extras.resources[currentPlayer]
+      if (!myResources) return false
       if (extras.deck.remaining.length === 0) {
         const newDeck = GameUtils.createDeckState()
         extras.deck.remaining = newDeck.remaining
@@ -910,6 +975,10 @@ function App() {
       extras.deck.current = next
       extras.deck.discard.push(next)
       extras.deck.history.push(next)
+      if (next.suit === 'joker') {
+        if (next.color === 'red') myResources.redJokers += 1
+        if (next.color === 'black') myResources.blackJokers += 1
+      }
       if (extras.deck.history.length > 30) extras.deck.history = extras.deck.history.slice(-30)
       draft.extras = extras
       return true
@@ -1003,6 +1072,7 @@ function App() {
               onUnitIconSet={setUnitIcon}
               onUnitIconUpload={uploadUnitIcon}
               onApplyDeckCardToUnit={applyDeckCardToUnit}
+              onHealDropToUnit={healUnitByDrop}
               onResourceChange={updateResource}
             />
             <BoardPanel

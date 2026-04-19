@@ -57,7 +57,9 @@ const SECRET_MAP: Record<SecretType, SecretDef> = {
     icon: '☠️',
     title: 'Яд',
     color: '#aa2828',
-    desc: 'Бросьте d6, это моральный урон персонажу (сначала снимается защита).',
+    desc: "Персонаж достал из сундука колбу. Выпил, оказалось это моча. Бросьте D6 - это моральный урон который" +
+        " он" +
+        " получил (сначала снимается защита)",
   },
   camp: {
     type: 'camp',
@@ -106,6 +108,7 @@ const STAGE_2_3_TABLE: WeightedSecret[] = [
 
 interface SecretChestProps {
   onSecretApply?: (secretType: SecretType, stage: Stage) => void
+  onSecretOpened?: (secretTitle: string) => void
 }
 
 function pickWeightedSecret(stage: Stage): SecretDef {
@@ -120,11 +123,20 @@ function pickWeightedSecret(stage: Stage): SecretDef {
   return SECRET_MAP[table[table.length - 1].type]
 }
 
-export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply }) => {
+function isStockSecret(type: SecretType): boolean {
+  return type === 'heal' || type === 'buffdebuff' || type === 'provocation' || type === 'egoStrike'
+}
+
+function isDragItemSecret(type: SecretType): boolean {
+  return type === 'camp' || type === 'teleport'
+}
+
+export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply, onSecretOpened }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentSecret, setCurrentSecret] = useState<SecretDef | null>(null)
   const [isAnimating, setIsAnimating] = useState(false)
   const [stage, setStage] = useState<Stage>(1)
+  const [isSecretApplied, setIsSecretApplied] = useState(false)
 
   const openChest = () => {
     if (isAnimating) return
@@ -134,10 +146,8 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply }) => {
 
     const secret = pickWeightedSecret(stage)
     setCurrentSecret(secret)
-
-    if (onSecretApply) {
-      onSecretApply(secret.type, stage)
-    }
+    setIsSecretApplied(false)
+    onSecretOpened?.(secret.title)
 
     setTimeout(() => {
       setIsAnimating(false)
@@ -148,7 +158,14 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply }) => {
     setIsOpen(false)
     setTimeout(() => {
       setCurrentSecret(null)
+      setIsSecretApplied(false)
     }, 100)
+  }
+
+  function handleAddToStock(): void {
+    if (!currentSecret || isSecretApplied) return
+    onSecretApply?.(currentSecret.type, stage)
+    setIsSecretApplied(true)
   }
 
   return (
@@ -186,6 +203,30 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply }) => {
                   </div>
                 </div>
                 <div className="secret-desc">{currentSecret.desc}</div>
+                <div className="secret-actions">
+                  {isStockSecret(currentSecret.type) ? (
+                    <button type="button" className="secret-action-btn" onClick={handleAddToStock} disabled={isSecretApplied}>
+                      {isSecretApplied ? 'Добавлено' : 'Добавить на склад'}
+                    </button>
+                  ) : null}
+                  {isDragItemSecret(currentSecret.type) ? (
+                    <button
+                      type="button"
+                      className="secret-action-btn"
+                      draggable
+                      title="Перетащите на карточку персонажа"
+                      onDragStart={(event) => {
+                        event.dataTransfer.effectAllowed = 'copy'
+                        event.dataTransfer.setData(
+                          'application/x-ca-secret-item',
+                          JSON.stringify({ item: currentSecret.type === 'camp' ? 'camp' : 'teleport' }),
+                        )
+                      }}
+                    >
+                      Перетащить на персонажа
+                    </button>
+                  ) : null}
+                </div>
                 <button className="secret-close" onClick={closeSecret}>
                   Закрыть
                 </button>

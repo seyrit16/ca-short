@@ -4772,6 +4772,24 @@
       "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
       "player": "player1",
       "timestamp": 1776355220321
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776590603891
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776590608626
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Крит. урон",
+      "player": "player1",
+      "timestamp": 1776590612908
     }
   ],
   "extras": {
@@ -4793,12 +4811,20 @@
       "player1": {
         "trees": 1,
         "redJokers": 0,
-        "blackJokers": 0
+        "blackJokers": 0,
+        "heal": 0,
+        "buffDebuff": 0,
+        "provocation": 0,
+        "egoStrike": 0
       },
       "player2": {
         "trees": 0,
         "redJokers": 0,
-        "blackJokers": 0
+        "blackJokers": 0,
+        "heal": 0,
+        "buffDebuff": 0,
+        "provocation": 0,
+        "egoStrike": 0
       }
     },
     "monster": {
@@ -5182,5 +5208,5 @@
       }
     }
   },
-  "updatedAt": 1776355389865
+  "updatedAt": 1776590613110
 }

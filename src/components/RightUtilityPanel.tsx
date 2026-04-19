@@ -25,7 +25,7 @@ interface RightUtilityPanelProps {
 
 type CombatMode = 'normal' | 'crit' | 'vulnerable'
 
-const diceKinds = [4, 6, 8, 10, 12, 20, 100]
+const diceKinds = [4, 5, 6, 8, 10, 12, 20, 100]
 
 function randomCritPercent(): number {
   return Math.floor(Math.random() * 100) + 1
@@ -51,6 +51,9 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
   const [critPercent, setCritPercent] = useState(50)
   const [critRollVisual, setCritRollVisual] = useState(50)
   const [critRollTick, setCritRollTick] = useState(0)
+  const [healAmount, setHealAmount] = useState(5)
+  const [percentBase, setPercentBase] = useState(100)
+  const [percentValue, setPercentValue] = useState(10)
 
   const extras = props.game.extras
   const monster = extras?.monster ?? { name: 'Монстр', hp: 0, attack: 0, defense: 0 }
@@ -117,6 +120,11 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
       nextHp: Math.max(0, defenderStats.hp - hpLoss),
     }
   }, [combatMode, attackerStats, defenderStats, critPercent])
+  const percentResult = useMemo(() => {
+    const base = Number(percentBase) || 0
+    const percent = Number(percentValue) || 0
+    return (base * percent) / 100
+  }, [percentBase, percentValue])
 
   function addDieToPool(sides: number): void {
     setDicePool((prev) => [...prev, sides])
@@ -390,11 +398,66 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
       ) : null}
 
       <SecretChest
-        onSecretApply={(secretType, stage) => {
-          props.onApplySecret(secretType, stage)
-          props.onSecretOpened(secretType)
-        }}
+        onSecretApply={(secretType, stage) => props.onApplySecret(secretType, stage)}
+        onSecretOpened={(secretTitle) => props.onSecretOpened(secretTitle)}
       />
+
+      <section className="util-card">
+        <h3>Лечение (Drag & Drop)</h3>
+        <p className="muted">Перетащите кнопку лечения на карточку персонажа в левой панели.</p>
+        <div className="row wrap">
+          <button
+            type="button"
+            draggable
+            onDragStart={(event) => {
+              event.dataTransfer.effectAllowed = 'copy'
+              event.dataTransfer.setData('application/x-ca-heal', JSON.stringify({ mode: 'full' }))
+            }}
+            title="Полное лечение"
+          >
+            ❤️ Полное
+          </button>
+          <input
+            type="number"
+            min={1}
+            value={healAmount}
+            onChange={(event) => setHealAmount(Math.max(1, Number(event.target.value) || 1))}
+            title="Лечение на число"
+          />
+          <button
+            type="button"
+            draggable
+            onDragStart={(event) => {
+              event.dataTransfer.effectAllowed = 'copy'
+              event.dataTransfer.setData('application/x-ca-heal', JSON.stringify({ mode: 'fixed', amount: healAmount }))
+            }}
+            title="Лечение на число"
+          >
+            ❤️ +{healAmount}
+          </button>
+        </div>
+      </section>
+
+      <section className="util-card">
+        <h3>Калькулятор процентов</h3>
+        <div className="row wrap">
+          <input
+            type="number"
+            value={percentBase}
+            onChange={(event) => setPercentBase(Number(event.target.value) || 0)}
+            title="Число"
+            placeholder="Число"
+          />
+          <input
+            type="number"
+            value={percentValue}
+            onChange={(event) => setPercentValue(Number(event.target.value) || 0)}
+            title="Процент"
+            placeholder="%"
+          />
+          <input type="number" value={Number(percentResult.toFixed(2))} readOnly title="Ответ" placeholder="Ответ" />
+        </div>
+      </section>
 
       <p className="muted">Активный игрок: {props.currentPlayer}</p>
     </aside>

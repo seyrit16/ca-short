@@ -17,6 +17,7 @@ interface LeftGamePanelProps {
     onUnitIconSet: (unitId: string, icon: string) => void;
     onUnitIconUpload: (unitId: string, file: File) => Promise<string | null>;
     onApplyDeckCardToUnit: (unitId: string) => void;
+    onHealDropToUnit: (unitId: string, mode: 'full' | 'fixed', amount?: number) => void;
     onResourceChange: (
         player: PlayerKey,
         key: 'trees' | 'redJokers' | 'blackJokers' | 'heal' | 'buffDebuff' | 'provocation' | 'egoStrike',
@@ -45,6 +46,7 @@ function UnitCard({
     onUnitItemChange,
     onUnitRename,
     onDropDeckCard,
+    onHealDropToUnit,
                   }: {
     unit: Unit;
     availableIcons: string[];
@@ -57,6 +59,7 @@ function UnitCard({
     onUnitItemChange: (id: string, item: 'teleport' | 'camp' | 'returnStone', delta: number) => void;
     onUnitRename: (id: string, name: string) => void;
     onDropDeckCard: (unitId: string) => void;
+    onHealDropToUnit: (unitId: string, mode: 'full' | 'fixed', amount?: number) => void;
 }) {
     const [draftName, setDraftName] = useState(unit.name);
 
@@ -86,6 +89,33 @@ function UnitCard({
                 event.preventDefault();
                 if (event.dataTransfer.getData('application/x-ca-card') === 'current') {
                     onDropDeckCard(unit.id);
+                    return;
+                }
+                const secretItemPayload = event.dataTransfer.getData('application/x-ca-secret-item');
+                if (secretItemPayload) {
+                    try {
+                        const parsed = JSON.parse(secretItemPayload) as { item?: 'teleport' | 'camp' };
+                        if (parsed.item === 'teleport' || parsed.item === 'camp') {
+                            onUnitItemChange(unit.id, parsed.item, 1);
+                            return;
+                        }
+                    } catch {
+                        // no-op
+                    }
+                }
+                const healPayload = event.dataTransfer.getData('application/x-ca-heal');
+                if (!healPayload) return;
+                try {
+                    const parsed = JSON.parse(healPayload) as { mode?: 'full' | 'fixed'; amount?: number };
+                    if (parsed.mode === 'full') {
+                        onHealDropToUnit(unit.id, 'full');
+                        return;
+                    }
+                    if (parsed.mode === 'fixed') {
+                        onHealDropToUnit(unit.id, 'fixed', Number(parsed.amount) || 0);
+                    }
+                } catch {
+                    // no-op
                 }
             }}
             title="Перетащите карту из колоды на персонажа"
@@ -384,6 +414,7 @@ export function LeftGamePanel(props: LeftGamePanelProps) {
                         onUnitItemChange={props.onUnitItemChange}
                         onUnitRename={props.onUnitRename}
                         onDropDeckCard={props.onApplyDeckCardToUnit}
+                        onHealDropToUnit={props.onHealDropToUnit}
                     />
                 ))}
             </div>

@@ -444,25 +444,27 @@
 }
 
 .die-chip {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   border-radius: 4px;
   padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
 }
 
 .die-kind-btn {
-  width: 52px;
-  height: 42px;
-  min-width: 52px;
+  width: 44px;
+  height: 36px;
+  min-width: 44px;
   border-radius: 4px;
   padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
 }
 
 .die {
@@ -482,6 +484,12 @@
   background: rgba(230, 170, 0, 0.26);
   border-color: rgba(230, 170, 0, 0.72);
   color: #ffea93;
+}
+
+.die-color-5 {
+  background: rgba(198, 145, 55, 0.28);
+  border-color: rgba(222, 172, 90, 0.72);
+  color: #ffe1ad;
 }
 
 .die-color-6 {
@@ -743,7 +751,7 @@
 }
 
 .combat-modal {
-  width: min(980px, 100%);
+  width: min(1100px, 100%);
   max-height: calc(100vh - 32px);
   overflow-y: auto;
   border-color: rgba(200, 152, 14, 0.45);
