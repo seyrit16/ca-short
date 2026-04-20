@@ -426,6 +426,22 @@
   text-transform: uppercase;
 }
 
+.music-controls {
+  align-items: center;
+}
+
+.music-volume-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.music-volume-row input[type='range'] {
+  width: 100%;
+}
+
 .dice-results {
   display: flex;
   flex-wrap: wrap;

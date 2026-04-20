@@ -2,29 +2,29 @@
   "id": "game_1776540369653_b2va37qbe",
   "name": "Klimaks",
   "maxTurns": 120,
-  "currentTurn": 24,
-  "currentPlayer": "player1",
+  "currentTurn": 39,
+  "currentPlayer": "player2",
   "status": "active",
   "createdAt": 1776540369653,
   "numCharacters": 5,
   "player1": {
     "color": "#c0392b",
-    "name": "Игрок 1",
+    "name": "seYrit",
     "captures": {
-      "normal": 11,
-      "permanent": 12
+      "normal": 55,
+      "permanent": 36
     },
-    "territory": 27,
+    "territory": 95,
     "capturePoints": 10
   },
   "player2": {
     "color": "#2980b9",
     "name": "pSvuk",
     "captures": {
-      "normal": 17,
-      "permanent": 16
+      "normal": 49,
+      "permanent": 52
     },
-    "territory": 37,
+    "territory": 105,
     "capturePoints": 10
   },
   "board": [
@@ -162,403 +162,419 @@
         "x": 18,
         "y": 0,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 19,
         "y": 0,
         "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 20,
-        "y": 0,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 21,
-        "y": 0,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 22,
-        "y": 0,
-        "type": "plain",
         "capture": {
           "type": "permanent",
-          "player": "player2"
+          "player": "player1"
         },
-        "object": null
-      },
-      {
-        "x": 23,
-        "y": 0,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      }
-    ],
-    [
-      {
-        "x": 0,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 1,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 2,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 3,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 4,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 5,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 6,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 7,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 8,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 9,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 10,
-        "y": 1,
-        "type": "river",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 11,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 12,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 13,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 14,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 15,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 16,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 17,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 18,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 19,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 20,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 21,
-        "y": 1,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 22,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 23,
-        "y": 1,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      }
-    ],
-    [
-      {
-        "x": 0,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 1,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 2,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 3,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 4,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 5,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 6,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 7,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 8,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 9,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 10,
-        "y": 2,
-        "type": "river",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 11,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 12,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 13,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 14,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 15,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 16,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "permanent",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 17,
-        "y": 2,
-        "type": "plain",
-        "capture": {
-          "type": "normal",
-          "player": "player2"
-        },
-        "object": null
-      },
-      {
-        "x": 18,
-        "y": 2,
-        "type": "plain",
-        "capture": null,
         "object": {
           "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
+          "placedAt": 1776627456976,
+          "placedBy": "player1"
+        }
+      },
+      {
+        "x": 20,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 0,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 0,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 0,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 1,
+        "type": "river",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627159339,
+          "placedBy": "player1"
         }
       },
       {
         "x": 19,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 20,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 21,
+        "y": 1,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 22,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 23,
+        "y": 1,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      }
+    ],
+    [
+      {
+        "x": 0,
         "y": 2,
         "type": "plain",
         "capture": null,
+        "object": null
+      },
+      {
+        "x": 1,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 3,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 4,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 5,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 6,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 7,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 8,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 9,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 10,
+        "y": 2,
+        "type": "river",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 11,
+        "y": 2,
+        "type": "plain",
+        "capture": null,
+        "object": null
+      },
+      {
+        "x": 12,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 13,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 14,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 15,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 16,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 17,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
+      },
+      {
+        "x": 18,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": null
+      },
+      {
+        "x": 19,
+        "y": 2,
+        "type": "plain",
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -634,25 +650,30 @@
         "x": 4,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 5,
         "y": 3,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 6,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -666,7 +687,10 @@
         "x": 8,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -687,41 +711,57 @@
         "x": 11,
         "y": 3,
         "type": "river",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 12,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": {
           "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
+          "placedAt": 1776626856812,
+          "placedBy": "player1"
         }
       },
       {
         "x": 13,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 14,
         "y": 3,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627034458,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 15,
         "y": 3,
         "type": "plain",
         "capture": {
-          "type": "normal",
-          "player": "player2"
+          "type": "permanent",
+          "player": "player1"
         },
         "object": null
       },
@@ -730,30 +770,47 @@
         "y": 3,
         "type": "plain",
         "capture": {
-          "type": "normal",
-          "player": "player2"
+          "type": "permanent",
+          "player": "player1"
         },
-        "object": null
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627161016,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 17,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 18,
         "y": 3,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627159790,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 19,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -790,7 +847,10 @@
         "x": 0,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -804,7 +864,10 @@
         "x": 2,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -822,39 +885,58 @@
         "x": 4,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 5,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 6,
         "y": 4,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627055958,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 7,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": {
           "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
+          "placedAt": 1776627054300,
+          "placedBy": "player2"
         }
       },
       {
@@ -885,7 +967,10 @@
         "x": 12,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -899,7 +984,10 @@
         "x": 14,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -913,7 +1001,10 @@
         "x": 16,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -927,7 +1018,10 @@
         "x": 18,
         "y": 4,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -971,71 +1065,98 @@
         "x": 0,
         "y": 5,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "monster",
-          "placedAt": 1776545721806,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 1,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 2,
         "y": 5,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627324908,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 3,
         "y": 5,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 4,
         "y": 5,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627324179,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 5,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 6,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 7,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1072,25 +1193,38 @@
         "x": 12,
         "y": 5,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626599838,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 13,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 14,
         "y": 5,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": {
           "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
+          "placedAt": 1776627035983,
+          "placedBy": "player1"
         }
       },
       {
@@ -1162,7 +1296,10 @@
         "x": 0,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1176,7 +1313,10 @@
         "x": 2,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1194,7 +1334,10 @@
         "x": 4,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1212,17 +1355,21 @@
         "y": 6,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player2"
         },
-        "object": null
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627057628,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 7,
         "y": 6,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player2"
         },
         "object": null
@@ -1231,8 +1378,15 @@
         "x": 8,
         "y": 6,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627058245,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 9,
@@ -1262,7 +1416,10 @@
         "x": 12,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -1354,22 +1511,35 @@
         "x": 0,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 1,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 2,
         "y": 7,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627326031,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 3,
@@ -1404,7 +1574,7 @@
         "y": 7,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player2"
         },
         "object": null
@@ -1413,33 +1583,41 @@
         "x": 7,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 10,
         "y": 7,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 11,
@@ -1452,7 +1630,10 @@
         "x": 12,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -1547,7 +1728,10 @@
         "x": 0,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1561,7 +1745,10 @@
         "x": 2,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1593,37 +1780,57 @@
         "y": 8,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player2"
         },
-        "object": null
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627061589,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 7,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 8,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627059618,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 9,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 10,
         "y": 8,
         "type": "river",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1637,7 +1844,10 @@
         "x": 12,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -1711,22 +1921,14 @@
         "y": 8,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "chest",
-          "placedAt": 1776545720042,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 23,
         "y": 8,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "object": null
       }
     ],
     [
@@ -1734,32 +1936,44 @@
         "x": 0,
         "y": 9,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 1,
         "y": 9,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 2,
         "y": 9,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627655665,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 3,
         "y": 9,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1780,7 +1994,10 @@
         "x": 6,
         "y": 9,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1794,7 +2011,10 @@
         "x": 8,
         "y": 9,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1822,7 +2042,10 @@
         "x": 12,
         "y": 9,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2004,11 +2227,7 @@
         "y": 10,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 13,
@@ -2152,7 +2371,10 @@
         "x": 6,
         "y": 11,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -2201,7 +2423,10 @@
         "x": 13,
         "y": 11,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2280,14 +2505,20 @@
         "x": 0,
         "y": 12,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 1,
         "y": 12,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2367,7 +2598,10 @@
         "x": 12,
         "y": 12,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2375,10 +2609,14 @@
         "y": 12,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player1"
         },
-        "object": null
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626545812,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 14,
@@ -2473,21 +2711,30 @@
         "x": 1,
         "y": 13,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 2,
         "y": 13,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 3,
         "y": 13,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2561,7 +2808,10 @@
         "x": 13,
         "y": 13,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2664,7 +2914,10 @@
         "x": 3,
         "y": 14,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2699,14 +2952,20 @@
         "x": 8,
         "y": 14,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 14,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -2784,11 +3043,7 @@
         "y": 14,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 20,
@@ -2845,7 +3100,10 @@
         "x": 3,
         "y": 15,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2877,28 +3135,44 @@
         "x": 7,
         "y": 15,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 15,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 15,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627610351,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 10,
         "y": 15,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -2919,7 +3193,10 @@
         "x": 13,
         "y": 15,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -2992,11 +3269,7 @@
         "y": 15,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "chest",
-          "placedAt": 1776545720042,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 23,
@@ -3032,7 +3305,10 @@
         "x": 3,
         "y": 16,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3068,21 +3344,34 @@
         "x": 7,
         "y": 16,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 16,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626826223,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 9,
         "y": 16,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -3090,11 +3379,7 @@
         "y": 16,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 11,
@@ -3111,13 +3396,6 @@
         "x": 12,
         "y": 16,
         "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 13,
-        "y": 16,
-        "type": "plain",
         "capture": {
           "type": "normal",
           "player": "player1"
@@ -3125,10 +3403,27 @@
         "object": null
       },
       {
+        "x": 13,
+        "y": 16,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626483098,
+          "placedBy": "player1"
+        }
+      },
+      {
         "x": 14,
         "y": 16,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3224,14 +3519,20 @@
         "x": 3,
         "y": 17,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 4,
         "y": 17,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3252,14 +3553,20 @@
         "x": 7,
         "y": 17,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 17,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -3299,7 +3606,7 @@
         "y": 17,
         "type": "plain",
         "capture": {
-          "type": "normal",
+          "type": "permanent",
           "player": "player1"
         },
         "object": null
@@ -3411,14 +3718,20 @@
         "x": 4,
         "y": 18,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 5,
         "y": 18,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3432,21 +3745,34 @@
         "x": 7,
         "y": 18,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 18,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626825231,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 9,
         "y": 18,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -3467,13 +3793,6 @@
         "x": 12,
         "y": 18,
         "type": "plain",
-        "capture": null,
-        "object": null
-      },
-      {
-        "x": 13,
-        "y": 18,
-        "type": "plain",
         "capture": {
           "type": "normal",
           "player": "player1"
@@ -3481,10 +3800,27 @@
         "object": null
       },
       {
+        "x": 13,
+        "y": 18,
+        "type": "plain",
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626469400,
+          "placedBy": "player1"
+        }
+      },
+      {
         "x": 14,
         "y": 18,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3556,76 +3892,95 @@
         "x": 0,
         "y": 19,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
       },
       {
         "x": 1,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 2,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 3,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 4,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 5,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": {
           "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
+          "placedAt": 1776627007598,
+          "placedBy": "player1"
         }
       },
       {
         "x": 6,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 7,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 19,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
       },
       {
         "x": 9,
@@ -3659,7 +4014,10 @@
         "x": 13,
         "y": 19,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3779,7 +4137,10 @@
         "x": 5,
         "y": 20,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
         "object": null
       },
       {
@@ -3800,14 +4161,20 @@
         "x": 8,
         "y": 20,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 20,
         "type": "river",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -3951,49 +4318,78 @@
         "x": 4,
         "y": 21,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 5,
         "y": 21,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player1"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626435388,
+          "placedBy": "player1"
+        }
       },
       {
         "x": 6,
         "y": 21,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 7,
         "y": 21,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
         "object": null
       },
       {
         "x": 8,
         "y": 21,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 21,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626623490,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 10,
         "y": 21,
         "type": "river",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -4121,11 +4517,7 @@
         "y": 22,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "chest",
-          "placedAt": 1776545720042,
-          "placedBy": "system"
-        }
+        "object": null
       },
       {
         "x": 4,
@@ -4138,12 +4530,11 @@
         "x": 5,
         "y": 22,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "normal",
+          "player": "player1"
+        },
+        "object": null
       },
       {
         "x": 6,
@@ -4170,21 +4561,34 @@
         "x": 9,
         "y": 22,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 10,
         "y": 22,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776627595954,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 11,
         "y": 22,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -4339,88 +4743,124 @@
         "x": 8,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 9,
         "y": 23,
         "type": "plain",
-        "capture": null,
-        "object": null
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": {
+          "type": "tree",
+          "placedAt": 1776626660269,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 10,
         "y": 23,
         "type": "plain",
-        "capture": null,
-        "object": {
-          "type": "tree",
-          "placedAt": 1776545714056,
-          "placedBy": "system"
-        }
+        "capture": {
+          "type": "permanent",
+          "player": "player2"
+        },
+        "object": null
       },
       {
         "x": 11,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 12,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 13,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 14,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 15,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 16,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 17,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 18,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 19,
         "y": 23,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -4461,13 +4901,13 @@
       "emoji": "🙂",
       "icon": "/assets/characters/1.png",
       "x": 1,
-      "y": 18,
+      "y": 22,
       "name": "Капибыра",
       "hp": 5,
-      "maxHp": 15,
-      "attack": 5,
+      "maxHp": 18,
+      "attack": 6,
       "defense": 5,
-      "capture": 0,
+      "capture": 3,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4481,13 +4921,13 @@
       "type": "character",
       "emoji": "🙂",
       "icon": "/assets/characters/3.png",
-      "x": 15,
-      "y": 17,
+      "x": 2,
+      "y": 21,
       "name": "Пипи",
-      "hp": 39,
+      "hp": 5,
       "maxHp": 40,
-      "attack": 20,
-      "defense": 15,
+      "attack": 6,
+      "defense": 5,
       "capture": 0,
       "items": {
         "teleport": 0,
@@ -4502,11 +4942,11 @@
       "type": "character",
       "emoji": "🙂",
       "icon": "/assets/characters/10.png",
-      "x": 20,
-      "y": 20,
+      "x": 0,
+      "y": 22,
       "name": "Пуль",
       "hp": 5,
-      "maxHp": 5,
+      "maxHp": 7,
       "attack": 5,
       "defense": 5,
       "capture": 0,
@@ -4523,14 +4963,14 @@
       "type": "character",
       "emoji": "🙂",
       "icon": "/assets/characters/fire.png",
-      "x": 12,
-      "y": 12,
+      "x": 0,
+      "y": 23,
       "name": "Рюмпик",
       "hp": 5,
-      "maxHp": 8,
-      "attack": 1,
-      "defense": 0,
-      "capture": 0,
+      "maxHp": 20,
+      "attack": 5,
+      "defense": 5,
+      "capture": 11,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4544,14 +4984,14 @@
       "type": "character",
       "emoji": "🙂",
       "icon": "/assets/characters/neir.png",
-      "x": 0,
+      "x": 1,
       "y": 23,
       "name": "Ботя",
-      "hp": 17,
-      "maxHp": 17,
-      "attack": 2,
-      "defense": 1,
-      "capture": 0,
+      "hp": 5,
+      "maxHp": 22,
+      "attack": 5,
+      "defense": 5,
+      "capture": 1,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4564,14 +5004,14 @@
       "player": "player2",
       "type": "character",
       "emoji": "🙂",
-      "x": 19,
-      "y": 22,
+      "x": 8,
+      "y": 14,
       "name": "ДИОльфинио",
-      "hp": 16,
-      "maxHp": 16,
-      "attack": 19,
-      "defense": 20,
-      "capture": 15,
+      "hp": 35,
+      "maxHp": 35,
+      "attack": 34,
+      "defense": 26,
+      "capture": 7,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4585,14 +5025,14 @@
       "player": "player2",
       "type": "character",
       "emoji": "🙂",
-      "x": 7,
-      "y": 6,
+      "x": 0,
+      "y": 5,
       "name": "Киточад",
-      "hp": 18,
-      "maxHp": 18,
-      "attack": 13,
-      "defense": 23,
-      "capture": 9,
+      "hp": 44,
+      "maxHp": 44,
+      "attack": 28,
+      "defense": 43,
+      "capture": 6,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4609,11 +5049,11 @@
       "x": 16,
       "y": 8,
       "name": "Очко Саурона",
-      "hp": 1,
-      "maxHp": 6,
+      "hp": 14,
+      "maxHp": 19,
       "attack": 1,
       "defense": 0,
-      "capture": 0,
+      "capture": 16,
       "items": {
         "teleport": 0,
         "camp": 0,
@@ -4628,12 +5068,12 @@
       "type": "character",
       "emoji": "🙂",
       "x": 22,
-      "y": 4,
+      "y": 1,
       "name": "Седой Онанист",
-      "hp": 2,
-      "maxHp": 2,
-      "attack": 12,
-      "defense": 9,
+      "hp": 5,
+      "maxHp": 12,
+      "attack": 14,
+      "defense": 5,
       "capture": 0,
       "items": {
         "teleport": 0,
@@ -4648,8 +5088,8 @@
       "player": "player2",
       "type": "character",
       "emoji": "🙂",
-      "x": 23,
-      "y": 0,
+      "x": 20,
+      "y": 4,
       "name": "Глыбус",
       "hp": 5,
       "maxHp": 5,
@@ -4668,637 +5108,637 @@
   "objects": [],
   "events": [
     {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player2",
-      "timestamp": 1776544336451
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [2, 4, 3, 2], Σ=11",
-      "player": "player1",
-      "timestamp": 1776544435004
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [2, 14, 5], Σ=21",
-      "player": "player1",
-      "timestamp": 1776544516739
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [7, 10], Σ=17",
-      "player": "player1",
-      "timestamp": 1776544531355
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [3, 6], Σ=9",
-      "player": "player1",
-      "timestamp": 1776544552815
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 6], Σ=7",
-      "player": "player1",
-      "timestamp": 1776544554389
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 6], Σ=7",
-      "player": "player1",
-      "timestamp": 1776544555632
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 5], Σ=6",
-      "player": "player1",
-      "timestamp": 1776544557622
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player1",
-      "timestamp": 1776544568166
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 6], Σ=10",
-      "player": "player1",
-      "timestamp": 1776544579059
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [4], Σ=4",
-      "player": "player2",
-      "timestamp": 1776544583474
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Атака прошла",
-      "player": "player1",
-      "timestamp": 1776544591216
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [2, 6], Σ=8",
-      "player": "player1",
-      "timestamp": 1776544598413
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 1], Σ=2",
-      "player": "player1",
-      "timestamp": 1776544600322
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [3, 5], Σ=8",
-      "player": "player1",
-      "timestamp": 1776544602602
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player1",
-      "timestamp": 1776544611667
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 1], Σ=5",
-      "player": "player1",
-      "timestamp": 1776544625156
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [4], Σ=4",
-      "player": "player2",
-      "timestamp": 1776544642593
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Атака прошла",
-      "player": "player1",
-      "timestamp": 1776544654735
-    },
-    {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [3, 1], Σ=4",
       "player": "player1",
-      "timestamp": 1776544691243
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Атака прошла",
-      "player": "player1",
-      "timestamp": 1776544703104
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 3], Σ=7",
-      "player": "player1",
-      "timestamp": 1776544716009
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [5], Σ=5",
-      "player": "player2",
-      "timestamp": 1776544718040
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Блок",
-      "player": "player1",
-      "timestamp": 1776544744605
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [2, 3], Σ=5",
-      "player": "player1",
-      "timestamp": 1776544758954
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Блок",
-      "player": "player1",
-      "timestamp": 1776544772272
+      "timestamp": 1776627965246
     },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [2, 1], Σ=3",
       "player": "player1",
-      "timestamp": 1776544774777
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [4], Σ=4",
-      "player": "player2",
-      "timestamp": 1776544775570
+      "timestamp": 1776627967436
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Крит. урон",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
       "player": "player1",
-      "timestamp": 1776544782606
+      "timestamp": 1776627977006
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 1], Σ=5",
+      "message": "player1 бросил набор кубиков: [2, 1], Σ=3",
       "player": "player1",
-      "timestamp": 1776544800882
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Блок",
-      "player": "player1",
-      "timestamp": 1776544810491
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 4], Σ=8",
-      "player": "player1",
-      "timestamp": 1776544813154
+      "timestamp": 1776627992470
     },
     {
       "type": "dice",
       "message": "player2 бросил набор кубиков: [2], Σ=2",
       "player": "player2",
-      "timestamp": 1776544814770
+      "timestamp": 1776627997089
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 5], Σ=7",
+      "player": "player1",
+      "timestamp": 1776628002838
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Блок",
       "player": "player1",
-      "timestamp": 1776544823424
+      "timestamp": 1776628002838
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 4], Σ=5",
+      "message": "player1 бросил набор кубиков: [4, 4], Σ=8",
       "player": "player1",
-      "timestamp": 1776544825230
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 3], Σ=7",
-      "player": "player1",
-      "timestamp": 1776544829462
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [5], Σ=5",
-      "player": "player2",
-      "timestamp": 1776544831507
+      "timestamp": 1776628005754
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Блок",
       "player": "player1",
-      "timestamp": 1776544839650
+      "timestamp": 1776628014248
     },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [3, 2], Σ=5",
       "player": "player1",
-      "timestamp": 1776544844211
+      "timestamp": 1776628021332
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 5], Σ=8",
+      "player": "player1",
+      "timestamp": 1776628023007
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Контратака",
+      "message": "player1 крутил колесо битвы: Атака прошла",
       "player": "player1",
-      "timestamp": 1776544852042
+      "timestamp": 1776628031172
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 1], Σ=4",
+      "player": "player1",
+      "timestamp": 1776628038886
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 2], Σ=4",
+      "player": "player1",
+      "timestamp": 1776628040911
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Контратака",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
       "player": "player1",
-      "timestamp": 1776544857009
+      "timestamp": 1776628047187
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 3], Σ=6",
+      "player": "player1",
+      "timestamp": 1776628053079
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 4], Σ=5",
+      "player": "player1",
+      "timestamp": 1776628054274
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Крит. урон",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
       "player": "player1",
-      "timestamp": 1776544861826
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [34], Σ=34",
-      "player": "player1",
-      "timestamp": 1776544958467
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [6, 1, 1, 1], Σ=9",
-      "player": "player2",
-      "timestamp": 1776544990809
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [3, 6, 4, 4], Σ=17",
-      "player": "player1",
-      "timestamp": 1776545066157
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [13, 8, 10], Σ=31",
-      "player": "player1",
-      "timestamp": 1776545120942
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1], Σ=1",
-      "player": "player1",
-      "timestamp": 1776545130365
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [2], Σ=2",
-      "player": "player1",
-      "timestamp": 1776545152585
+      "timestamp": 1776628061381
     },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [2, 6], Σ=8",
       "player": "player1",
-      "timestamp": 1776545178112
+      "timestamp": 1776628069371
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 4], Σ=8",
-      "player": "player1",
-      "timestamp": 1776545179561
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1], Σ=1",
+      "message": "player2 бросил набор кубиков: [3], Σ=3",
       "player": "player2",
-      "timestamp": 1776545184290
+      "timestamp": 1776628074294
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Контратака",
+      "message": "player1 крутил колесо битвы: Крит. урон",
       "player": "player1",
-      "timestamp": 1776545196755
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Блок",
-      "player": "player1",
-      "timestamp": 1776545201872
+      "timestamp": 1776628090965
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 1], Σ=2",
+      "message": "player1 бросил набор кубиков: [2, 5], Σ=7",
       "player": "player1",
-      "timestamp": 1776545205415
+      "timestamp": 1776628102921
     },
     {
       "type": "wheel",
-      "message": "player1 крутил колесо битвы: Контратака",
+      "message": "player1 крутил колесо битвы: Атака прошла",
       "player": "player1",
-      "timestamp": 1776545211723
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Блок",
-      "player": "player1",
-      "timestamp": 1776545218291
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 4], Σ=8",
-      "player": "player1",
-      "timestamp": 1776545221816
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player1",
-      "timestamp": 1776545231257
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 4], Σ=8",
-      "player": "player1",
-      "timestamp": 1776545239487
-    },
-    {
-      "type": "wheel",
-      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player1",
-      "timestamp": 1776545247307
+      "timestamp": 1776628120856
     },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [3, 4], Σ=7",
       "player": "player1",
-      "timestamp": 1776545251499
-    },
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 1], Σ=2",
-      "player": "player1",
-      "timestamp": 1776545252822
+      "timestamp": 1776628134073
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Крит. урон",
       "player": "player1",
-      "timestamp": 1776545259108
+      "timestamp": 1776628159324
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [1, 1], Σ=2",
+      "message": "player1 бросил набор кубиков: [2, 1], Σ=3",
       "player": "player1",
-      "timestamp": 1776545273904
+      "timestamp": 1776628165109
     },
     {
       "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 5], Σ=9",
-      "player": "player1",
-      "timestamp": 1776545275696
+      "message": "player2 бросил набор кубиков: [2], Σ=2",
+      "player": "player2",
+      "timestamp": 1776628167372
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
       "player": "player1",
-      "timestamp": 1776545314376
+      "timestamp": 1776628171885
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 2], Σ=3",
+      "player": "player1",
+      "timestamp": 1776628188327
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776628198360
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Крит. урон",
+      "player": "player1",
+      "timestamp": 1776628204461
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 4], Σ=6",
+      "player": "player1",
+      "timestamp": 1776628242363
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Крит. урон",
+      "player": "player1",
+      "timestamp": 1776628249886
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4], Σ=4",
+      "player": "player2",
+      "timestamp": 1776628250627
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 4], Σ=5",
+      "player": "player1",
+      "timestamp": 1776628263977
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776628270688
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Крит. урон",
+      "player": "player1",
+      "timestamp": 1776628275504
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 2], Σ=4",
+      "player": "player1",
+      "timestamp": 1776628290610
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2], Σ=2",
+      "player": "player2",
+      "timestamp": 1776628293151
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player1",
+      "timestamp": 1776628298829
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 6], Σ=7",
+      "player": "player1",
+      "timestamp": 1776628308477
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 3], Σ=5",
+      "player": "player1",
+      "timestamp": 1776628310352
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [5], Σ=5",
+      "player": "player2",
+      "timestamp": 1776628312275
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player1",
+      "timestamp": 1776628318284
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 5], Σ=8",
+      "player": "player1",
+      "timestamp": 1776628326222
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 4], Σ=7",
+      "player": "player1",
+      "timestamp": 1776628329921
     },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [1, 1], Σ=2",
       "player": "player1",
-      "timestamp": 1776545326680
+      "timestamp": 1776628330983
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 6, 5], Σ=12",
+      "player": "player1",
+      "timestamp": 1776628338315
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 3, 3], Σ=8",
+      "player": "player1",
+      "timestamp": 1776628343725
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 2, 1], Σ=4",
+      "player": "player1",
+      "timestamp": 1776628346756
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Крит. урон",
       "player": "player1",
-      "timestamp": 1776545332846
+      "timestamp": 1776628356132
     },
     {
       "type": "dice",
-      "message": "player2 бросил набор кубиков: [6, 5, 2, 3], Σ=16",
-      "player": "player2",
-      "timestamp": 1776545422242
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [19, 3, 6], Σ=28",
-      "player": "player2",
-      "timestamp": 1776545451670
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [7, 8], Σ=15",
-      "player": "player2",
-      "timestamp": 1776545457701
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [4, 5], Σ=9",
-      "player": "player2",
-      "timestamp": 1776545472714
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Блок",
-      "player": "player2",
-      "timestamp": 1776545482522
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 3], Σ=4",
-      "player": "player2",
-      "timestamp": 1776545485879
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 1], Σ=2",
-      "player": "player2",
-      "timestamp": 1776545487247
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player2",
-      "timestamp": 1776545494775
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 1], Σ=2",
-      "player": "player2",
-      "timestamp": 1776545499741
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 5], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545502509
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
-      "player": "player2",
-      "timestamp": 1776545509774
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 1], Σ=2",
-      "player": "player2",
-      "timestamp": 1776545514848
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 5], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545516574
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Контратака",
-      "player": "player2",
-      "timestamp": 1776545522521
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Контратака",
-      "player": "player2",
-      "timestamp": 1776545527258
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Контратака",
-      "player": "player2",
-      "timestamp": 1776545531729
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Контратака",
-      "player": "player2",
-      "timestamp": 1776545536067
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Блок",
-      "player": "player2",
-      "timestamp": 1776545540906
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [3, 6], Σ=9",
-      "player": "player2",
-      "timestamp": 1776545542657
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [3, 3], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545543674
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Атака прошла",
-      "player": "player2",
-      "timestamp": 1776545549282
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [3, 3], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545557312
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [3, 1], Σ=4",
-      "player": "player2",
-      "timestamp": 1776545558874
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Контратака",
-      "player": "player2",
-      "timestamp": 1776545565064
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Атака прошла",
-      "player": "player2",
-      "timestamp": 1776545569869
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 5], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545582969
-    },
-    {
-      "type": "wheel",
-      "message": "player2 крутил колесо битвы: Атака прошла",
-      "player": "player2",
-      "timestamp": 1776545588905
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [1, 1, 4], Σ=6",
-      "player": "player2",
-      "timestamp": 1776545699712
-    },
-    {
-      "type": "dice",
-      "message": "player2 бросил набор кубиков: [17, 3, 3], Σ=23",
-      "player": "player2",
-      "timestamp": 1776545706613
-    },
-    {
-      "type": "secret",
-      "message": "player1 открыл сундук: debuff",
+      "message": "player1 бросил набор кубиков: [3, 2, 3], Σ=8",
       "player": "player1",
-      "timestamp": 1776545769921
+      "timestamp": 1776628375302
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 3, 3], Σ=9",
+      "player": "player1",
+      "timestamp": 1776628376653
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776628384735
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776628390462
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Крит. урон",
+      "player": "player1",
+      "timestamp": 1776628413335
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [4, 6, 1], Σ=11",
+      "player": "player1",
+      "timestamp": 1776628425055
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Блок",
       "player": "player1",
-      "timestamp": 1776590783232
+      "timestamp": 1776628431538
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4], Σ=4",
+      "player": "player2",
+      "timestamp": 1776628430818
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 5, 2], Σ=10",
+      "player": "player1",
+      "timestamp": 1776628448035
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Блок",
+      "player": "player1",
+      "timestamp": 1776628458503
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [1, 5, 3], Σ=9",
+      "player": "player1",
+      "timestamp": 1776628460735
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 5, 1], Σ=9",
+      "player": "player1",
+      "timestamp": 1776628461814
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player1",
+      "timestamp": 1776628494036
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [4, 2, 6], Σ=12",
+      "player": "player1",
+      "timestamp": 1776628510764
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [3], Σ=3",
+      "player": "player2",
+      "timestamp": 1776628515274
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player1",
+      "timestamp": 1776628517104
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 3, 4], Σ=10",
+      "player": "player1",
+      "timestamp": 1776628558365
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [2, 1, 3], Σ=6",
+      "player": "player1",
+      "timestamp": 1776628572076
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [1], Σ=1",
+      "player": "player2",
+      "timestamp": 1776628575147
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player1",
+      "timestamp": 1776628578524
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [3, 4, 5], Σ=12",
+      "player": "player1",
+      "timestamp": 1776628587743
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [4, 5, 4], Σ=13",
+      "player": "player1",
+      "timestamp": 1776628593742
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Блок",
+      "player": "player1",
+      "timestamp": 1776628599625
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [4, 6, 2], Σ=12",
+      "player": "player1",
+      "timestamp": 1776628602798
+    },
+    {
+      "type": "wheel",
+      "message": "player1 крутил колесо битвы: Контратака",
+      "player": "player1",
+      "timestamp": 1776628610427
     },
     {
       "type": "wheel",
       "message": "player1 крутил колесо битвы: Крит. урон",
       "player": "player1",
-      "timestamp": 1776590787816
+      "timestamp": 1776628615542
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [48], Σ=48",
+      "player": "player1",
+      "timestamp": 1776628698021
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [28], Σ=28",
+      "player": "player1",
+      "timestamp": 1776628714893
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [28], Σ=28",
+      "player": "player1",
+      "timestamp": 1776628732237
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [29], Σ=29",
+      "player": "player1",
+      "timestamp": 1776628734043
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2, 3, 6, 6], Σ=17",
+      "player": "player2",
+      "timestamp": 1776628788391
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [32, 17], Σ=49",
+      "player": "player2",
+      "timestamp": 1776628815994
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [15, 2], Σ=17",
+      "player": "player2",
+      "timestamp": 1776628832111
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [6, 7], Σ=13",
+      "player": "player2",
+      "timestamp": 1776628840181
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 3], Σ=7",
+      "player": "player2",
+      "timestamp": 1776628857056
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Атака прошла",
+      "player": "player2",
+      "timestamp": 1776628863172
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [3, 4], Σ=7",
+      "player": "player2",
+      "timestamp": 1776628868035
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 6], Σ=10",
+      "player": "player2",
+      "timestamp": 1776628869076
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 1], Σ=5",
+      "player": "player2",
+      "timestamp": 1776628870698
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [5], Σ=5",
+      "player": "player1",
+      "timestamp": 1776628880460
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player2",
+      "timestamp": 1776628885683
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2, 1], Σ=3",
+      "player": "player2",
+      "timestamp": 1776628900181
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Удар в уязвимую зону",
+      "player": "player2",
+      "timestamp": 1776628909033
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [3, 6], Σ=9",
+      "player": "player2",
+      "timestamp": 1776628918952
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [4, 2], Σ=6",
+      "player": "player2",
+      "timestamp": 1776628920353
+    },
+    {
+      "type": "dice",
+      "message": "player1 бросил набор кубиков: [4], Σ=4",
+      "player": "player1",
+      "timestamp": 1776628925419
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Атака прошла",
+      "player": "player2",
+      "timestamp": 1776628926240
+    },
+    {
+      "type": "wheel",
+      "message": "player2 крутил колесо битвы: Атака прошла",
+      "player": "player2",
+      "timestamp": 1776628946294
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [51], Σ=51",
+      "player": "player2",
+      "timestamp": 1776629037616
     }
   ],
   "extras": {
     "queueByPlayer": {
       "player1": [
-        "p1_unit_1",
         "p1_unit_2",
+        "p1_unit_1",
         "p1_unit_3",
-        "p1_unit_0",
-        "p1_unit_4"
+        "p1_unit_4",
+        "p1_unit_0"
       ],
       "player2": [
-        "p2_unit_4",
         "p2_unit_1",
+        "p2_unit_0",
         "p2_unit_2",
-        "p2_unit_3",
-        "p2_unit_0"
+        "p2_unit_4",
+        "p2_unit_3"
       ]
     },
     "resources": {
       "player1": {
-        "trees": 3,
+        "trees": 0,
         "redJokers": 0,
-        "blackJokers": 0,
+        "blackJokers": 1,
         "heal": 0,
         "buffDebuff": 0,
         "provocation": 0,
         "egoStrike": 0
       },
       "player2": {
-        "trees": 5,
-        "redJokers": 1,
-        "blackJokers": 0,
+        "trees": 3,
+        "redJokers": 2,
+        "blackJokers": 1,
         "heal": 0,
         "buffDebuff": 1,
         "provocation": 0,
@@ -5308,131 +5748,15 @@
     "monster": {
       "name": "Монстр",
       "hp": 0,
-      "attack": 7,
+      "attack": 17,
       "defense": 0
     },
     "deck": {
       "remaining": [
         {
-          "id": "joker_black",
-          "label": "BJ",
-          "suit": "joker",
-          "color": "black"
-        },
-        {
-          "id": "2_hearts",
-          "label": "2♥",
+          "id": "A_hearts",
+          "label": "A♥",
           "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "2_clubs",
-          "label": "2♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "A_spades",
-          "label": "A♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "7_diamonds",
-          "label": "7♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "4_clubs",
-          "label": "4♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "5_spades",
-          "label": "5♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "9_diamonds",
-          "label": "9♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "7_spades",
-          "label": "7♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "J_diamonds",
-          "label": "J♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "7_clubs",
-          "label": "7♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "10_diamonds",
-          "label": "10♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "5_hearts",
-          "label": "5♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "Q_diamonds",
-          "label": "Q♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "7_hearts",
-          "label": "7♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "3_hearts",
-          "label": "3♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "9_clubs",
-          "label": "9♣",
-          "suit": "clubs",
-          "color": "black"
-        }
-      ],
-      "discard": [
-        {
-          "id": "10_clubs",
-          "label": "10♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "10_hearts",
-          "label": "10♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "K_diamonds",
-          "label": "K♦",
-          "suit": "diamonds",
           "color": "red"
         },
         {
@@ -5442,8 +5766,20 @@
           "color": "black"
         },
         {
-          "id": "J_clubs",
-          "label": "J♣",
+          "id": "A_diamonds",
+          "label": "A♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "Q_spades",
+          "label": "Q♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "10_clubs",
+          "label": "10♣",
           "suit": "clubs",
           "color": "black"
         },
@@ -5454,8 +5790,112 @@
           "color": "black"
         },
         {
+          "id": "9_diamonds",
+          "label": "9♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
           "id": "3_spades",
           "label": "3♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "5_hearts",
+          "label": "5♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "Q_clubs",
+          "label": "Q♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "7_clubs",
+          "label": "7♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "10_hearts",
+          "label": "10♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "5_diamonds",
+          "label": "5♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "2_hearts",
+          "label": "2♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "9_clubs",
+          "label": "9♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "7_diamonds",
+          "label": "7♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "8_clubs",
+          "label": "8♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "J_spades",
+          "label": "J♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "4_clubs",
+          "label": "4♣",
+          "suit": "clubs",
+          "color": "black"
+        }
+      ],
+      "discard": [
+        {
+          "id": "4_spades",
+          "label": "4♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "2_clubs",
+          "label": "2♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "Q_diamonds",
+          "label": "Q♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "7_spades",
+          "label": "7♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "2_spades",
+          "label": "2♠",
           "suit": "spades",
           "color": "black"
         },
@@ -5466,14 +5906,20 @@
           "color": "red"
         },
         {
-          "id": "3_diamonds",
-          "label": "3♦",
+          "id": "4_diamonds",
+          "label": "4♦",
           "suit": "diamonds",
           "color": "red"
         },
         {
-          "id": "Q_hearts",
-          "label": "Q♥",
+          "id": "9_hearts",
+          "label": "9♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "4_hearts",
+          "label": "4♥",
           "suit": "hearts",
           "color": "red"
         },
@@ -5484,10 +5930,70 @@
           "color": "black"
         },
         {
-          "id": "A_clubs",
-          "label": "A♣",
+          "id": "J_clubs",
+          "label": "J♣",
           "suit": "clubs",
           "color": "black"
+        },
+        {
+          "id": "3_hearts",
+          "label": "3♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "5_spades",
+          "label": "5♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "8_spades",
+          "label": "8♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "6_clubs",
+          "label": "6♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "A_spades",
+          "label": "A♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "joker_red",
+          "label": "RJ",
+          "suit": "joker",
+          "color": "red"
+        },
+        {
+          "id": "K_diamonds",
+          "label": "K♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "8_hearts",
+          "label": "8♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_clubs",
+          "label": "3♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "8_diamonds",
+          "label": "8♦",
+          "suit": "diamonds",
+          "color": "red"
         },
         {
           "id": "2_diamonds",
@@ -5502,34 +6008,28 @@
           "color": "black"
         },
         {
+          "id": "6_spades",
+          "label": "6♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "3_diamonds",
+          "label": "3♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
           "id": "6_hearts",
           "label": "6♥",
           "suit": "hearts",
           "color": "red"
         },
         {
-          "id": "4_diamonds",
-          "label": "4♦",
-          "suit": "diamonds",
+          "id": "Q_hearts",
+          "label": "Q♥",
+          "suit": "hearts",
           "color": "red"
-        },
-        {
-          "id": "8_clubs",
-          "label": "8♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "5_diamonds",
-          "label": "5♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "Q_clubs",
-          "label": "Q♣",
-          "suit": "clubs",
-          "color": "black"
         },
         {
           "id": "K_clubs",
@@ -5538,92 +6038,26 @@
           "color": "black"
         },
         {
-          "id": "4_spades",
-          "label": "4♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "Q_spades",
-          "label": "Q♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "6_spades",
-          "label": "6♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "2_spades",
-          "label": "2♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "8_hearts",
-          "label": "8♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "joker_red",
-          "label": "RJ",
-          "suit": "joker",
-          "color": "red"
-        },
-        {
-          "id": "8_diamonds",
-          "label": "8♦",
+          "id": "J_diamonds",
+          "label": "J♦",
           "suit": "diamonds",
           "color": "red"
         },
         {
-          "id": "J_spades",
-          "label": "J♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "3_clubs",
-          "label": "3♣",
+          "id": "A_clubs",
+          "label": "A♣",
           "suit": "clubs",
           "color": "black"
         },
         {
+          "id": "7_hearts",
+          "label": "7♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
           "id": "K_hearts",
           "label": "K♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "8_spades",
-          "label": "8♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "A_diamonds",
-          "label": "A♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "A_hearts",
-          "label": "A♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "4_hearts",
-          "label": "4♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "9_hearts",
-          "label": "9♥",
           "suit": "hearts",
           "color": "red"
         },
@@ -5634,10 +6068,16 @@
           "color": "red"
         },
         {
-          "id": "6_clubs",
-          "label": "6♣",
-          "suit": "clubs",
+          "id": "joker_black",
+          "label": "BJ",
+          "suit": "joker",
           "color": "black"
+        },
+        {
+          "id": "10_diamonds",
+          "label": "10♦",
+          "suit": "diamonds",
+          "color": "red"
         }
       ],
       "current": null,
@@ -5649,14 +6089,20 @@
           "color": "red"
         },
         {
-          "id": "3_diamonds",
-          "label": "3♦",
+          "id": "4_diamonds",
+          "label": "4♦",
           "suit": "diamonds",
           "color": "red"
         },
         {
-          "id": "Q_hearts",
-          "label": "Q♥",
+          "id": "9_hearts",
+          "label": "9♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "4_hearts",
+          "label": "4♥",
           "suit": "hearts",
           "color": "red"
         },
@@ -5667,10 +6113,70 @@
           "color": "black"
         },
         {
-          "id": "A_clubs",
-          "label": "A♣",
+          "id": "J_clubs",
+          "label": "J♣",
           "suit": "clubs",
           "color": "black"
+        },
+        {
+          "id": "3_hearts",
+          "label": "3♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "5_spades",
+          "label": "5♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "8_spades",
+          "label": "8♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "6_clubs",
+          "label": "6♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "A_spades",
+          "label": "A♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "joker_red",
+          "label": "RJ",
+          "suit": "joker",
+          "color": "red"
+        },
+        {
+          "id": "K_diamonds",
+          "label": "K♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "8_hearts",
+          "label": "8♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "3_clubs",
+          "label": "3♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "8_diamonds",
+          "label": "8♦",
+          "suit": "diamonds",
+          "color": "red"
         },
         {
           "id": "2_diamonds",
@@ -5685,34 +6191,28 @@
           "color": "black"
         },
         {
+          "id": "6_spades",
+          "label": "6♠",
+          "suit": "spades",
+          "color": "black"
+        },
+        {
+          "id": "3_diamonds",
+          "label": "3♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
           "id": "6_hearts",
           "label": "6♥",
           "suit": "hearts",
           "color": "red"
         },
         {
-          "id": "4_diamonds",
-          "label": "4♦",
-          "suit": "diamonds",
+          "id": "Q_hearts",
+          "label": "Q♥",
+          "suit": "hearts",
           "color": "red"
-        },
-        {
-          "id": "8_clubs",
-          "label": "8♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "5_diamonds",
-          "label": "5♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "Q_clubs",
-          "label": "Q♣",
-          "suit": "clubs",
-          "color": "black"
         },
         {
           "id": "K_clubs",
@@ -5721,92 +6221,26 @@
           "color": "black"
         },
         {
-          "id": "4_spades",
-          "label": "4♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "Q_spades",
-          "label": "Q♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "6_spades",
-          "label": "6♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "2_spades",
-          "label": "2♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "8_hearts",
-          "label": "8♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "joker_red",
-          "label": "RJ",
-          "suit": "joker",
-          "color": "red"
-        },
-        {
-          "id": "8_diamonds",
-          "label": "8♦",
+          "id": "J_diamonds",
+          "label": "J♦",
           "suit": "diamonds",
           "color": "red"
         },
         {
-          "id": "J_spades",
-          "label": "J♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "3_clubs",
-          "label": "3♣",
+          "id": "A_clubs",
+          "label": "A♣",
           "suit": "clubs",
           "color": "black"
         },
         {
+          "id": "7_hearts",
+          "label": "7♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
           "id": "K_hearts",
           "label": "K♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "8_spades",
-          "label": "8♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "A_diamonds",
-          "label": "A♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "A_hearts",
-          "label": "A♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "4_hearts",
-          "label": "4♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "9_hearts",
-          "label": "9♥",
           "suit": "hearts",
           "color": "red"
         },
@@ -5817,17 +6251,51 @@
           "color": "red"
         },
         {
-          "id": "6_clubs",
-          "label": "6♣",
-          "suit": "clubs",
+          "id": "joker_black",
+          "label": "BJ",
+          "suit": "joker",
           "color": "black"
+        },
+        {
+          "id": "10_diamonds",
+          "label": "10♦",
+          "suit": "diamonds",
+          "color": "red"
         }
       ]
     },
     "moveState": {
-      "turnKey": "player1:12",
-      "byUnit": {}
+      "turnKey": "player2:39",
+      "byUnit": {
+        "p2_unit_1": {
+          "start": {
+            "x": 0,
+            "y": 9
+          },
+          "captured": [
+            {
+              "x": 0,
+              "y": 8
+            },
+            {
+              "x": 0,
+              "y": 7
+            },
+            {
+              "x": 0,
+              "y": 6
+            }
+          ]
+        },
+        "p2_unit_3": {
+          "start": {
+            "x": 22,
+            "y": 15
+          },
+          "captured": []
+        }
+      }
     }
   },
-  "updatedAt": 1776590788014
+  "updatedAt": 1776629065217
 }

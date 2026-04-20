@@ -15,6 +15,7 @@ import './styles/board.css'
 import './styles/deckSection.css'
 import './styles/battleWheel.css'
 import './styles/secretChest.css'
+import {RandomDropPopup, type RandomDropPopupRef} from "./components";
 
 type ViewMode = 'home' | 'game'
 const sessionKey = 'ca_active_session'
@@ -51,6 +52,7 @@ function App() {
   const pendingMutationsRef = useRef<Array<(draft: Game) => boolean>>([])
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isFlushingSaveRef = useRef(false)
+  const dropMessageRef = useRef<RandomDropPopupRef>(null)
 
   useEffect(() => {
     void loadGames()
@@ -632,13 +634,29 @@ function App() {
   }
 
   function updateUnitItem(unitId: string, item: 'teleport' | 'camp' | 'returnStone', delta: number): void {
+    let applied = false
     updateLocal((draft) => {
       const unit = draft.units.find((entry) => entry.id === unitId)
       if (!unit) return false
       unit.items ??= { teleport: 0, camp: 0, returnStone: 0 }
       unit.items[item] = Math.max(0, (unit.items[item] ?? 0) + delta)
+      applied = true
       return true
     })
+
+    if(applied){
+      const opponentKey = currentPlayer === 'player1' ? 'player2' : 'player1'
+      const opponentIcons = game?.units
+          .filter((u) => u.player === opponentKey && u.alive)
+          .map((u) => u.icon ?? (u.player === 'player2' ? '/assets/characters/2.png' : '/assets/characters/1.png')) ?? []
+      console.log("icons", opponentIcons)
+
+      dropMessageRef.current?.show({
+        imagePaths: opponentIcons,
+        messages: ['Нифига тебе везет!!!', 'Подари!'],
+        autoCloseMs: 5000,
+      })
+    }
   }
 
   function healUnitByDrop(unitId: string, mode: 'full' | 'fixed', amount?: number): void {
@@ -788,6 +806,12 @@ function App() {
 
       extras.deck.current = null
       draft.extras = extras
+
+      dropMessageRef.current?.show({
+        imagePaths: [unit.icon ?? (unit.player === 'player2' ? '/assets/characters/2.png' : '/assets/characters/1.png')],
+        messages: ["Спасибо хозяин!!! ^-^", "Моя благодарность не имеет границ!\n Сколько тебе заплатить?"]
+      })
+
       return true
     })
   }
@@ -882,6 +906,8 @@ function App() {
   }
 
   function handleApplySecret(secret: string, _stage?: 1 | 2 | 3): void {
+    let applied = false
+
     updateLocal((draft) => {
       const extras = GameUtils.ensureExtras(draft)
       const myResources = extras.resources[currentPlayer]
@@ -924,8 +950,23 @@ function App() {
       }
 
       draft.extras = extras
+      applied = true;
       return true
     })
+
+    if(applied){
+      const opponentKey = currentPlayer === 'player1' ? 'player2' : 'player1'
+      const opponentIcons = game?.units
+          .filter((u) => u.player === opponentKey && u.alive)
+          .map((u) => u.icon ?? (u.player === 'player2' ? '/assets/characters/2.png' : '/assets/characters/1.png')) ?? []
+      console.log("icons", opponentIcons)
+
+      dropMessageRef.current?.show({
+        imagePaths: opponentIcons,
+        messages: ['Нифига тебе везет!!!', 'Подари!'],
+        autoCloseMs: 5000,
+      })
+    }
   }
 
   function addGameEvent(type: string, message: string): void {
@@ -1114,6 +1155,8 @@ function App() {
           />
         </>
       ) : null}
+
+      <RandomDropPopup ref={dropMessageRef} />
     </main>
   )
 }

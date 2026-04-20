@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import { RandomDropPopup } from './RandomDropPopup'
+import type { RandomDropPopupRef } from './RandomDropPopup'
 
 type SecretType = 'buff' | 'debuff' | 'buffdebuff' | 'teleport' | 'heal' | 'poison' | 'camp' | 'provocation' | 'egoStrike'
 type Stage = 1 | 2 | 3
@@ -137,6 +139,7 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply, onSecre
   const [isAnimating, setIsAnimating] = useState(false)
   const [stage, setStage] = useState<Stage>(1)
   const [isSecretApplied, setIsSecretApplied] = useState(false)
+  const dropRef = useRef<RandomDropPopupRef>(null)
 
   const openChest = () => {
     if (isAnimating) return
@@ -148,6 +151,13 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply, onSecre
     setCurrentSecret(secret)
     setIsSecretApplied(false)
     onSecretOpened?.(secret.title)
+
+    // dropRef.current?.show({
+    //   imagePaths: ['/assets/characters/bat.png', "/assets/characters/1.png"],
+    //   messages: ['Крит!', 'Успех!'],
+    //   coords: { top: 12, right: 950 },
+    //   autoCloseMs: 5000,
+    // })
 
     setTimeout(() => {
       setIsAnimating(false)
@@ -245,6 +255,7 @@ export const SecretChest: React.FC<SecretChestProps> = ({ onSecretApply, onSecre
           </div>
         </div>
       </div>
+      <RandomDropPopup ref={dropRef} />
     </section>
   )
 }
