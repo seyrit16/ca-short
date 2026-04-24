@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { API } from './api/gameApi'
 import { BoardPanel } from './components/BoardPanel'
 import { HomeScreen } from './components/HomeScreen'
@@ -16,6 +16,22 @@ import './styles/deckSection.css'
 import './styles/battleWheel.css'
 import './styles/secretChest.css'
 import {RandomDropPopup, type RandomDropPopupRef} from "./components";
+import {BattlePanel} from "./components/BattlePanel.tsx";
+
+const musicTracks = [
+  '/assets/music/CHAD_bgm_chiptune.mp3',
+  '/assets/music/ambient_CHAD.mp3',
+  '/assets/music/Battle_OST_1_CHAD.mp3',
+  '/assets/music/Battle_OST_2_CHAD.mp3',
+    '/assets/music/T3_Monster-Fight_OST.mp3'
+]
+
+const battleMusicTracks = [
+  '/assets/music/T3_Monster-Fight_OST.mp3',
+  '/assets/music/Battle_OST_1_CHAD.mp3',
+  '/assets/music/Battle_OST_2_CHAD.mp3',
+]
+const musicVolumeStorageKey = 'ca_music_volume'
 
 type ViewMode = 'home' | 'game'
 const sessionKey = 'ca_active_session'
@@ -52,7 +68,30 @@ function App() {
   const pendingMutationsRef = useRef<Array<(draft: Game) => boolean>>([])
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isFlushingSaveRef = useRef(false)
+  const [isBoard, setIsBoard] = useState(true)
   const dropMessageRef = useRef<RandomDropPopupRef>(null)
+
+  // Music state
+  const [musicEnabled, setMusicEnabled] = useState(false)
+  const [musicMode, setMusicMode] = useState<'ordered' | 'random'>('ordered')
+  const [musicIndex, setMusicIndex] = useState(0)
+  const [activeTracks, setActiveTracks] = useState<string[]>(musicTracks)
+  const activeTracksRef = useRef<string[]>(musicTracks)
+  useEffect(() => { activeTracksRef.current = activeTracks }, [activeTracks])
+  const [musicDropdownOpen, setMusicDropdownOpen] = useState(false)
+  const [musicVolume, setMusicVolume] = useState(() => {
+    const raw = localStorage.getItem(musicVolumeStorageKey)
+    const parsed = raw ? Number(raw) : 0.35
+    if (!Number.isFinite(parsed)) return 0.35
+    return Math.min(1, Math.max(0, parsed))
+  })
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const musicModeRef = useRef(musicMode)
+  const musicVolumeRef = useRef(musicVolume)
+
+  // Keep refs in sync with state
+  useEffect(() => { musicModeRef.current = musicMode }, [musicMode])
+  useEffect(() => { musicVolumeRef.current = musicVolume }, [musicVolume])
 
   useEffect(() => {
     void loadGames()
@@ -91,7 +130,6 @@ function App() {
       }
 
       socket.onmessage = (event) => {
-        console.info(`${wsLogPrefix} IN`, event.data)
         try {
           const payload = JSON.parse(String(event.data)) as {
             type?: string
@@ -160,6 +198,188 @@ function App() {
     const timer = setTimeout(() => setTopNotice(''), 5000)
     return () => clearTimeout(timer)
   }, [game?.events, currentPlayer, lastSeenEventTs, game])
+
+  const finalizePendingMovement = useCallback(() => {
+    if (!selectedUnitId || pathCells.length === 0 || !game) return
+    const movingUnitId = selectedUnitId
+    const plannedPath = [...pathCells]
+
+    setSelectedUnitId(null)
+    setPathCells([])
+
+    updateLocal((draft) => {
+      const extras = GameUtils.ensureExtras(draft)
+      extras.moveState = GameUtils.ensureMoveState(draft, extras.moveState)
+      const myResources = extras.resources[currentPlayer]
+      const unit = draft.units.find((entry) => entry.id === movingUnitId)
+      if (!unit) return false
+
+      const currentPlayerData = draft[currentPlayer]
+      if (!currentPlayerData || !myResources) return false
+
+      const destination = plannedPath[plannedPath.length - 1]
+      let state = extras.moveState.byUnit[unit.id]
+      if (!state) {
+        state = { start: { x: unit.x, y: unit.y }, captured: [] }
+      }
+
+      let captureBudget = unit.capture
+      for (const step of plannedPath) {
+        if (captureBudget <= 0) break
+        const cell = GameUtils.getCell(draft, step.x, step.y)
+        if (!cell || cell.type === 'river' || cell.object || GameUtils.getUnitAt(draft, step.x, step.y)) continue
+
+        if (!cell.capture) {
+          cell.capture = { type: 'normal', player: currentPlayer }
+          state.captured.push({ x: step.x, y: step.y })
+          currentPlayerData.captures.normal += 1
+          captureBudget -= 1
+          continue
+        }
+
+        if (cell.capture.player === currentPlayer || cell.capture.type !== 'normal') continue
+
+        const enemy = draft[cell.capture.player]
+        if (!enemy) continue
+        enemy.captures.normal = Math.max(0, enemy.captures.normal - 1)
+        cell.capture = { type: 'normal', player: currentPlayer }
+        currentPlayerData.captures.normal += 1
+        captureBudget -= 1
+      }
+
+      plannedPath.forEach((step) => {
+        const cell = GameUtils.getCell(draft, step.x, step.y)
+        if (!cell?.object) return
+        if (cell.object.type === 'monster') {
+          cell.object = null
+          return
+        }
+        if (cell.object.type === 'chest') {
+          cell.object = null
+          return
+        }
+        if (cell.object.type === 'tree' && !cell.capture) {
+          cell.object = null
+          myResources.trees += 1
+        }
+      })
+
+      unit.capture = captureBudget
+      unit.x = destination.x
+      unit.y = destination.y
+
+      extras.moveState.byUnit[unit.id] = state
+      draft.extras = extras
+      GameUtils.calculateTerritory(draft)
+      return true
+    })
+  }, [selectedUnitId, pathCells, game, currentPlayer, updateLocal])
+
+  // Keyboard shortcuts for game mode
+  useEffect(() => {
+    if (viewMode !== 'game') return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Don't trigger shortcuts when typing in input fields
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+        return
+      }
+
+      const key = event.key.toLowerCase()
+
+      switch (key) {
+        case 'd':
+          // Reset tools: select tool and none capture mode
+          if (pathCells.length > 0) finalizePendingMovement()
+          setSelectedTool('select')
+          setCaptureMode('none')
+          break
+        case 'a':
+          // Normal capture mode
+          if (pathCells.length > 0) finalizePendingMovement()
+          setCaptureMode('normal')
+          break
+        case 's':
+          // Permanent capture mode
+          if (pathCells.length > 0) finalizePendingMovement()
+          setCaptureMode('permanent')
+          break
+        case 'q':
+        case 'w':
+        case 'e':
+        case 'r':
+        case 't': {
+          // Focus on characters by order (Q=1st, W=2nd, E=3rd, R=4th, T=5th)
+          if (!game) return
+          const unitIndex = ['q', 'w', 'e', 'r', 't'].indexOf(key)
+          const playerUnits = game.units.filter((u) => u.player === currentPlayer && u.alive)
+          if (unitIndex >= 0 && unitIndex < playerUnits.length) {
+            const targetUnit = playerUnits[unitIndex]
+            if (targetUnit) {
+              setSelectedUnitId(targetUnit.id)
+              setPathCells([])
+            }
+          }
+          break
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [viewMode, game, currentPlayer, pathCells.length, finalizePendingMovement])
+
+  // Audio initialization
+  useEffect(() => {
+    const audio = new Audio(musicTracks[0])
+    audio.preload = 'auto'
+    audio.volume = musicVolume
+    audioRef.current = audio
+
+    const onEnded = () => {
+      setMusicIndex((prev) => {
+        const tracks = activeTracksRef.current
+        if (tracks.length <= 1) return 0
+        if (musicModeRef.current === 'random') {
+          const nextChoices = tracks.map((_, idx) => idx).filter((idx) => idx !== prev)
+          return nextChoices[Math.floor(Math.random() * nextChoices.length)] ?? 0
+        }
+        return (prev + 1) % tracks.length
+      })
+    }
+
+    audio.addEventListener('ended', onEnded)
+    return () => {
+      audio.pause()
+      audio.removeEventListener('ended', onEnded)
+      audioRef.current = null
+    }
+  }, [])
+
+  // Audio controls
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+    audio.volume = musicVolume
+    localStorage.setItem(musicVolumeStorageKey, String(musicVolume))
+  }, [musicVolume])
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+    const tracks = activeTracksRef.current
+    const nextSrc = tracks[musicIndex] ?? tracks[0]
+    if (nextSrc && !audio.src.endsWith(nextSrc)) {
+      audio.src = nextSrc
+      audio.load()
+    }
+    if (!musicEnabled) {
+      audio.pause()
+      return
+    }
+    audio.loop = false  // зацикливание через onEnded, не через loop
+    void audio.play().catch(() => setMusicEnabled(false))
+  }, [musicEnabled, musicIndex, activeTracks])
 
   function showNotice(message: string): void {
     setError('')
@@ -294,81 +514,7 @@ function App() {
     queueSave()
   }
 
-  function finalizePendingMovement(): void {
-    if (!selectedUnitId || pathCells.length === 0 || !game) return
-    const movingUnitId = selectedUnitId
-    const plannedPath = [...pathCells]
 
-    setSelectedUnitId(null)
-    setPathCells([])
-
-    updateLocal((draft) => {
-      const extras = GameUtils.ensureExtras(draft)
-      extras.moveState = GameUtils.ensureMoveState(draft, extras.moveState)
-      const myResources = extras.resources[currentPlayer]
-      const unit = draft.units.find((entry) => entry.id === movingUnitId)
-      if (!unit) return false
-
-      const currentPlayerData = draft[currentPlayer]
-      if (!currentPlayerData || !myResources) return false
-
-      const destination = plannedPath[plannedPath.length - 1]
-      let state = extras.moveState.byUnit[unit.id]
-      if (!state) {
-        state = { start: { x: unit.x, y: unit.y }, captured: [] }
-      }
-
-      let captureBudget = unit.capture
-      for (const step of plannedPath) {
-        if (captureBudget <= 0) break
-        const cell = GameUtils.getCell(draft, step.x, step.y)
-        if (!cell || cell.type === 'river' || cell.object || GameUtils.getUnitAt(draft, step.x, step.y)) continue
-
-        if (!cell.capture) {
-          cell.capture = { type: 'normal', player: currentPlayer }
-          state.captured.push({ x: step.x, y: step.y })
-          currentPlayerData.captures.normal += 1
-          captureBudget -= 1
-          continue
-        }
-
-        if (cell.capture.player === currentPlayer || cell.capture.type !== 'normal') continue
-
-        const enemy = draft[cell.capture.player]
-        if (!enemy) continue
-        enemy.captures.normal = Math.max(0, enemy.captures.normal - 1)
-        cell.capture = { type: 'normal', player: currentPlayer }
-        currentPlayerData.captures.normal += 1
-        captureBudget -= 1
-      }
-
-      plannedPath.forEach((step) => {
-        const cell = GameUtils.getCell(draft, step.x, step.y)
-        if (!cell?.object) return
-        if (cell.object.type === 'monster') {
-          cell.object = null
-          return
-        }
-        if (cell.object.type === 'chest') {
-          cell.object = null
-          return
-        }
-        if (cell.object.type === 'tree' && !cell.capture) {
-          cell.object = null
-          myResources.trees += 1
-        }
-      })
-
-      unit.capture = captureBudget
-      unit.x = destination.x
-      unit.y = destination.y
-
-      extras.moveState.byUnit[unit.id] = state
-      draft.extras = extras
-      GameUtils.calculateTerritory(draft)
-      return true
-    })
-  }
 
   async function handleCreateGame(): Promise<void> {
     if (!sessionName.trim()) {
@@ -679,6 +825,44 @@ function App() {
     })
   }
 
+  function applyWarehouseDropToUnit(
+    player: PlayerKey,
+    unitId: string,
+    action: 'trees-camp' | 'red-joker-revive' | 'heal-full',
+  ): void {
+    updateLocal((draft) => {
+      const extras = GameUtils.ensureExtras(draft)
+      const resources = extras.resources[player]
+      const unit = draft.units.find((entry) => entry.id === unitId && entry.player === player)
+      if (!unit || !resources) return false
+
+      if (action === 'trees-camp') {
+        if (resources.trees < 6) return false
+        unit.items ??= { teleport: 0, camp: 0, returnStone: 0 }
+        resources.trees -= 6
+        unit.items.camp = Math.max(0, (unit.items.camp ?? 0) + 1)
+        draft.extras = extras
+        return true
+      }
+
+      if (action === 'red-joker-revive') {
+        if (resources.redJokers < 1 || unit.alive) return false
+        resources.redJokers -= 1
+        unit.hp = unit.maxHp
+        unit.alive = true
+        draft.extras = extras
+        return true
+      }
+
+      if (resources.heal < 1 || !unit.alive || unit.hp >= unit.maxHp) return false
+      resources.heal -= 1
+      unit.hp = unit.maxHp
+      unit.alive = true
+      draft.extras = extras
+      return true
+    })
+  }
+
   function renameUnit(unitId: string, name: string): void {
     updateLocal((draft) => {
       const unit = draft.units.find((entry) => entry.id === unitId)
@@ -860,7 +1044,7 @@ function App() {
   function handleApplyCombatAttack(payload: {
     attackerId: string | 'monster'
     defenderId: string | 'monster'
-    mode: 'normal' | 'crit' | 'vulnerable'
+    mode: 'normal' | 'crit' | 'vulnerable' | 'blocking'
     critPercent: number
   }): void {
     updateLocal((draft) => {
@@ -878,14 +1062,24 @@ function App() {
 
       if (attackerAttack === null) return false
 
-      const totalDamage =
+      let totalDamage =
         payload.mode === 'crit' ? Math.round(attackerAttack * (1 + crit / 100)) : Math.max(0, attackerAttack)
 
       function applyDamageToStats(target: { hp: number; defense: number }): void {
+        if(payload.mode === 'blocking'){
+          totalDamage = attackerAttack - target.defense/2;
+          if (totalDamage < 0){
+            return;
+          }
+          target.hp = Math.max(0, target.hp - totalDamage)
+          console.log(`aa=${attackerAttack}, d=${target.defense}, td=${totalDamage}`)
+          return;
+        }
         if (payload.mode === 'vulnerable') {
           target.hp = Math.max(0, target.hp - totalDamage)
           return
         }
+
         const blocked = Math.min(target.defense, totalDamage)
         target.defense = Math.max(0, target.defense - blocked)
         target.hp = Math.max(0, target.hp - Math.max(0, totalDamage - blocked))
@@ -1057,6 +1251,47 @@ function App() {
     reorderQueueByIndex(player, fromIndex, toIndex)
   }
 
+  const handleBattleStart = ()=>{
+    setIsBoard(false);
+  }
+
+  const handleToBoard = ()=>{
+    setIsBoard(true);
+    if(musicEnabled){
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.currentTime = 0
+      }
+      setActiveTracks(musicTracks)
+      setMusicIndex(0)
+      setMusicEnabled(true)
+    }
+  }
+
+  const handleRunMonsterBattleTrack = () => {
+    if(musicEnabled){
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.currentTime = 0
+      }
+      setActiveTracks(battleMusicTracks)
+      setMusicIndex(0)
+      setMusicEnabled(true)
+    }
+  }
+
+  const handleRunPlayerBattleTrack = () => {
+    if(musicEnabled){
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.currentTime = 0
+      }
+      setActiveTracks(battleMusicTracks)
+      setMusicIndex(0)
+      setMusicEnabled(true)
+    }
+  }
+
   return (
     <main className="app">
       {viewMode === 'home' ? (
@@ -1094,6 +1329,48 @@ function App() {
             <div className="row game-top-actions">
               <button onClick={handleEndTurn}>Завершить ход</button>
               <button onClick={handleManualSave}>Сохранить</button>
+              <div className="music-dropdown-container">
+                <button onClick={() => setMusicDropdownOpen((prev) => !prev)}>
+                  {musicEnabled ? '🔊' : '🔇'}
+                </button>
+                {musicDropdownOpen && (
+                  <div className="music-dropdown-panel">
+                    <div className="music-dropdown-header">
+                      <strong>Музыка</strong>
+                    </div>
+                    <div className="music-dropdown-controls">
+                      <button type="button" onClick={() => setMusicEnabled((prev) => !prev)}>
+                        {musicEnabled ? 'Пауза' : 'Играть'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setMusicMode((prev) => (prev === 'ordered' ? 'random' : 'ordered'))}
+                        title="Режим переключения треков"
+                      >
+                        Режим: {musicMode === 'ordered' ? 'По порядку' : 'Рандом'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setMusicIndex((prev) => (prev + 1) % musicTracks.length)}
+                        title="Следующий трек"
+                      >
+                        Следующий
+                      </button>
+                    </div>
+                    <label className="music-volume-row">
+                      <span>Громкость: {Math.round(musicVolume * 100)}%</span>
+                      <input
+                        type="range"
+                        min={0}
+                        max={1}
+                        step={0.01}
+                        value={musicVolume}
+                        onChange={(event) => setMusicVolume(Number(event.target.value))}
+                      />
+                    </label>
+                  </div>
+                )}
+              </div>
               <button onClick={handleBackHome}>На главную</button>
             </div>
           </header>
@@ -1114,19 +1391,32 @@ function App() {
               onUnitIconUpload={uploadUnitIcon}
               onApplyDeckCardToUnit={applyDeckCardToUnit}
               onHealDropToUnit={healUnitByDrop}
+              onWarehouseDropToUnit={applyWarehouseDropToUnit}
               onResourceChange={updateResource}
             />
-            <BoardPanel
-              game={game}
-              selectedUnitId={selectedUnitId}
-              pathCells={pathCells}
-              zoom={mapZoom}
-              onCellClick={handleCellClick}
-              onUnitTeleport={handleUnitTeleport}
-              onOutsideMapClick={handleOutsideMapClick}
-              onZoomIn={handleMapZoomIn}
-              onZoomOut={handleMapZoomOut}
-            />
+            {isBoard ?
+                <BoardPanel
+                    game={game}
+                    selectedUnitId={selectedUnitId}
+                    pathCells={pathCells}
+                    zoom={mapZoom}
+                    onCellClick={handleCellClick}
+                    onUnitTeleport={handleUnitTeleport}
+                    onOutsideMapClick={handleOutsideMapClick}
+                    onZoomIn={handleMapZoomIn}
+                    onZoomOut={handleMapZoomOut}
+                />
+                :
+                <BattlePanel
+                    game={game}
+                    onMonsterChange={handleMonsterChange}
+                    onApplyCombatAttack={handleApplyCombatAttack}
+                    onToBoard={handleToBoard}
+                    runMonsterBattleTrack = {handleRunMonsterBattleTrack}
+                    runPlayerBattleTrack = {handleRunPlayerBattleTrack}
+                />
+            }
+
             <RightUtilityPanel
               game={game}
               currentPlayer={currentPlayer}
@@ -1139,6 +1429,7 @@ function App() {
               onDiceRolled={handleDiceRolled}
               onWheelSpun={handleWheelSpun}
               onSecretOpened={handleSecretOpened}
+              onBattleStart={handleBattleStart}
             />
           </section>
 

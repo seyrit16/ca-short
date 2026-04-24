@@ -35,7 +35,7 @@ function broadcastWs(gameName, payload) {
   const room = wsClientsByGame.get(gameName)
   if (!room || room.size === 0) return
   const serialized = JSON.stringify(payload)
-  wsLog('OUT', `game=${gameName} clients=${room.size} payload=${serialized}`)
+  wsLog('OUT', `game=${gameName} clients=${room.size} payload=`)
   for (const client of room) {
     if (client.readyState !== WS_OPEN) continue
     try {
@@ -316,7 +316,7 @@ async function start() {
     wsLog('CONNECT', `game=${gameName} from=${request.socket.remoteAddress ?? 'unknown'}`)
     addWsClient(gameName, client)
     client.on('message', (raw) => {
-      wsLog('IN', `game=${gameName} payload=${String(raw)}`)
+      //wsLog('IN', `game=${gameName} `)
     })
     client.on('close', (code, reason) => {
       wsLog('CLOSE', `game=${gameName} code=${code} reason=${String(reason || '')}`)

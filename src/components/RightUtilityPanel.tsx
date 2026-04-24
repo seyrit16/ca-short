@@ -1,9 +1,10 @@
 import {useEffect, useMemo, useRef, useState} from 'react'
 import type { Game, PlayerKey, Unit } from '../types'
 import DeckSection from './DeckSection.tsx'
-import { BattleWheel } from './BattleWheel.tsx'
 import { SecretChest } from './SecretChest.tsx'
 import {RandomDropPopup, type RandomDropPopupRef} from "./RandomDropPopup.tsx";
+import {Dice3D} from "./Dice3D.tsx";
+import {BattleWheel} from "./BattleWheel.tsx";
 
 interface RightUtilityPanelProps {
   game: Game
@@ -22,18 +23,12 @@ interface RightUtilityPanelProps {
   onDiceRolled: (results: number[], total: number, sides: number) => void
   onWheelSpun: (result: string) => void
   onSecretOpened: (result: string) => void
+  onBattleStart: ()=>void
 }
 
 type CombatMode = 'normal' | 'crit' | 'vulnerable'
 
 const diceKinds = [4, 5, 6, 8, 10, 12, 20, 100]
-const musicTracks = [
-    '/assets/music/Battle_OST_1_CHAD.mp3',
-    '/assets/music/Battle_OST_2_CHAD.mp3',
-    '/assets/music/ambient_CHAD.mp3',
-    '/assets/music/CHAD_bgm_chiptune.mp3'
-]
-const musicVolumeStorageKey = 'ca_music_volume'
 
 function randomCritPercent(): number {
   return Math.floor(Math.random() * 100) + 1
@@ -62,18 +57,9 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
   const [healAmount, setHealAmount] = useState(5)
   const [percentBase, setPercentBase] = useState(100)
   const [percentValue, setPercentValue] = useState(10)
-  const [musicEnabled, setMusicEnabled] = useState(false)
-  const [musicMode, setMusicMode] = useState<'ordered' | 'random'>('ordered')
-  const [musicIndex, setMusicIndex] = useState(0)
-  const [musicVolume, setMusicVolume] = useState(() => {
-    const raw = localStorage.getItem(musicVolumeStorageKey)
-    const parsed = raw ? Number(raw) : 0.35
-    if (!Number.isFinite(parsed)) return 0.35
-    return Math.min(1, Math.max(0, parsed))
-  })
 
-  const dropPopupRef = useRef<RandomDropPopupRef>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const dropPopupRef = useRef<RandomDropPopupRef>(null)
+  const [rolling, setRolling] = useState<boolean>(false);
 
   const extras = props.game.extras
   const monster = extras?.monster ?? { name: 'Монстр', hp: 0, attack: 0, defense: 0 }
@@ -105,59 +91,6 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
       setDefenderId((defenderOptions[0] ?? 'monster') as string | 'monster')
     }
   }, [attackerId, defenderId, defenderOptions])
-
-  useEffect(() => {
-    const audio = new Audio(musicTracks[0])
-    audio.preload = 'auto'
-    audio.volume = musicVolume
-    audioRef.current = audio
-
-    const onEnded = () => {
-      setMusicIndex((prev) => {
-        if (musicTracks.length <= 1) return prev
-        if (musicMode === 'random') {
-          const nextChoices = musicTracks
-            .map((_, index) => index)
-            .filter((index) => index !== prev)
-          const randomIndex = Math.floor(Math.random() * nextChoices.length)
-          return nextChoices[randomIndex] ?? prev
-        }
-        return (prev + 1) % musicTracks.length
-      })
-    }
-
-    audio.addEventListener('ended', onEnded)
-    return () => {
-      audio.pause()
-      audio.removeEventListener('ended', onEnded)
-      audioRef.current = null
-    }
-  }, [])
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (!audio) return
-    audio.volume = musicVolume
-    localStorage.setItem(musicVolumeStorageKey, String(musicVolume))
-  }, [musicVolume])
-
-  useEffect(() => {
-    const audio = audioRef.current
-    if (!audio) return
-    const nextSrc = musicTracks[musicIndex] ?? musicTracks[0]
-    if (audio.src.endsWith(nextSrc) === false) {
-      audio.src = nextSrc
-      audio.load()
-    }
-    if (!musicEnabled) {
-      audio.pause()
-      return
-    }
-    audio.loop = true
-    void audio.play().catch(() => {
-      setMusicEnabled(false)
-    })
-  }, [musicEnabled, musicIndex])
 
   const diceTotal = useMemo(() => diceRolls.reduce((acc, item) => acc + item.value, 0), [diceRolls])
 
@@ -209,6 +142,7 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
 
   function rollDicePool(): void {
     if (dicePool.length === 0) return
+    setRolling(true);
 
     const rolls = dicePool.map((sides) => ({ sides, value: Math.floor(Math.random() * sides) + 1 }))
     setDiceRolls(rolls)
@@ -218,6 +152,8 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
       total,
       0,
     )
+
+    setTimeout(() => setRolling(false), 650);
   }
 
   function openCombatPopup(mode: CombatMode, title: string): void {
@@ -382,10 +318,19 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
         </div>
 
         <div className="dice-results">
+          {/*{diceRolls.map((item, index) => (*/}
+          {/*  <span key={`${item.sides}-${item.value}-${index}`} className={`die ${dieColorClass(item.sides)}`}>*/}
+          {/*    {item.value}*/}
+          {/*  </span>*/}
+          {/*))}*/}
           {diceRolls.map((item, index) => (
-            <span key={`${item.sides}-${item.value}-${index}`} className={`die ${dieColorClass(item.sides)}`}>
-              {item.value}
-            </span>
+              <Dice3D
+                  key={`${item.sides}-${item.value}-${index}`}
+                  sides={item.sides}
+                  value={item.value}
+                  rolling={rolling}
+                  className={`die ${dieColorClass(item.sides)}`}
+              />
           ))}
           {diceRolls.length > 0 && <strong>Σ {diceTotal}</strong>}
         </div>
@@ -435,6 +380,9 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
       </section>
 
       <BattleWheel onSpinResult={(result) => handleWheelResult(result)} />
+      <button onClick={props.onBattleStart}>
+        Битва
+      </button>
 
       {combatMode ? (
         <div className="combat-modal-backdrop" onClick={closeCombatPopup}>
@@ -585,40 +533,6 @@ export function RightUtilityPanel(props: RightUtilityPanelProps) {
           <input type="number" value={Number(percentResult.toFixed(2))} readOnly title="Ответ" placeholder="Ответ" />
         </div>
         <RandomDropPopup ref={dropPopupRef} />
-      </section>
-
-      <section className="util-card">
-        <h3>Музыка</h3>
-        <div className="row wrap music-controls">
-          <button type="button" onClick={() => setMusicEnabled((prev) => !prev)}>
-            {musicEnabled ? 'Пауза' : 'Играть'}
-          </button>
-          <button
-              type="button"
-              onClick={() => setMusicMode((prev) => (prev === 'ordered' ? 'random' : 'ordered'))}
-              title="Режим переключения треков"
-          >
-            Режим: {musicMode === 'ordered' ? 'По порядку' : 'Рандом'}
-          </button>
-          <button
-              type="button"
-              onClick={() => setMusicIndex((prev) => (prev + 1) % musicTracks.length)}
-              title="Следующий трек"
-          >
-            Следующий
-          </button>
-        </div>
-        <label className="music-volume-row">
-          <span>Громкость: {Math.round(musicVolume * 100)}%</span>
-          <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.01}
-              value={musicVolume}
-              onChange={(event) => setMusicVolume(Number(event.target.value))}
-          />
-        </label>
       </section>
 
       <p className="muted">Активный игрок: {props.currentPlayer}</p>

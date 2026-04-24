@@ -53,7 +53,7 @@ export const RandomDropPopup = forwardRef<RandomDropPopupRef, RandomDropPopupPro
   }
 
   function hideWithFade(): void {
-    //if (!active || closing) return
+    //game-topif (!active || closing) return
     setClosing(true)
     fadeTimerRef.current = setTimeout(() => {
       setActive(false)

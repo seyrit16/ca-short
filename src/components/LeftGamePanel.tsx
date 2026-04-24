@@ -2,6 +2,7 @@ import {useEffect, useMemo, useState} from 'react';
 import type {ChangeEvent, DragEvent} from 'react';
 import {API} from '../api/gameApi';
 import type {Game, PlayerKey, Unit} from '../types';
+import {WAREHOUSE_DROP_MIME, WarehousePanel} from './WarehousePanel';
 
 interface LeftGamePanelProps {
     game: Game;
@@ -18,6 +19,11 @@ interface LeftGamePanelProps {
     onUnitIconUpload: (unitId: string, file: File) => Promise<string | null>;
     onApplyDeckCardToUnit: (unitId: string) => void;
     onHealDropToUnit: (unitId: string, mode: 'full' | 'fixed', amount?: number) => void;
+    onWarehouseDropToUnit: (
+        player: PlayerKey,
+        unitId: string,
+        action: 'trees-camp' | 'red-joker-revive' | 'heal-full'
+    ) => void;
     onResourceChange: (
         player: PlayerKey,
         key: 'trees' | 'redJokers' | 'blackJokers' | 'heal' | 'buffDebuff' | 'provocation' | 'egoStrike',
@@ -47,6 +53,8 @@ function UnitCard({
     onUnitRename,
     onDropDeckCard,
     onHealDropToUnit,
+    onWarehouseDropToUnit,
+    statsPlayer,
                   }: {
     unit: Unit;
     availableIcons: string[];
@@ -60,6 +68,12 @@ function UnitCard({
     onUnitRename: (id: string, name: string) => void;
     onDropDeckCard: (unitId: string) => void;
     onHealDropToUnit: (unitId: string, mode: 'full' | 'fixed', amount?: number) => void;
+    onWarehouseDropToUnit: (
+        player: PlayerKey,
+        unitId: string,
+        action: 'trees-camp' | 'red-joker-revive' | 'heal-full'
+    ) => void;
+    statsPlayer: PlayerKey;
 }) {
     const [draftName, setDraftName] = useState(unit.name);
 
@@ -97,6 +111,18 @@ function UnitCard({
                         const parsed = JSON.parse(secretItemPayload) as { item?: 'teleport' | 'camp' };
                         if (parsed.item === 'teleport' || parsed.item === 'camp') {
                             onUnitItemChange(unit.id, parsed.item, 1);
+                            return;
+                        }
+                    } catch {
+                        // no-op
+                    }
+                }
+                const warehousePayload = event.dataTransfer.getData(WAREHOUSE_DROP_MIME);
+                if (warehousePayload) {
+                    try {
+                        const parsed = JSON.parse(warehousePayload) as { action?: 'trees-camp' | 'red-joker-revive' | 'heal-full' };
+                        if (parsed.action === 'trees-camp' || parsed.action === 'red-joker-revive' || parsed.action === 'heal-full') {
+                            onWarehouseDropToUnit(statsPlayer, unit.id, parsed.action);
                             return;
                         }
                     } catch {
@@ -356,23 +382,31 @@ export function LeftGamePanel(props: LeftGamePanelProps) {
                 </button>
             </div>
             <h2>Очередь персонажей</h2>
-            <div className="queue-strip">
-                {queue.map((unit, index) => (
-                    <button
-                        key={unit.id}
-                        className="queue-icon"
-                        draggable
-                        onClick={() => props.onQueueFocus(statsPlayer, unit.id)}
-                        onDragStart={(event) => handleDragStart(event, index)}
-                        onDragOver={handleDragOver}
-                        onDrop={(event) => handleDrop(event, index)}
-                        onDragEnd={handleDragEnd}
-                        title="ЛКМ: сортировка по расстоянию"
-                        type="button"
-                    >
-                        <img src={unitIcon(unit)} alt={unit.name} className="queue-icon-img"/>
-                    </button>
-                ))}
+            <div className="queue-warehouse-row">
+                <div className="queue-strip">
+                    {queue.map((unit, index) => (
+                        <button
+                            key={unit.id}
+                            className="queue-icon"
+                            draggable
+                            onClick={() => props.onQueueFocus(statsPlayer, unit.id)}
+                            onDragStart={(event) => handleDragStart(event, index)}
+                            onDragOver={handleDragOver}
+                            onDrop={(event) => handleDrop(event, index)}
+                            onDragEnd={handleDragEnd}
+                            title="ЛКМ: сортировка по расстоянию"
+                            type="button"
+                        >
+                            <img src={unitIcon(unit)} alt={unit.name} className="queue-icon-img"/>
+                        </button>
+                    ))}
+                </div>
+                <WarehousePanel
+                    statsPlayer={statsPlayer}
+                    statsPlayerName={statsPlayerName}
+                    resources={extras?.resources?.[statsPlayer]}
+                    onResourceChange={props.onResourceChange}
+                />
             </div>
             <p className="muted">ЛКМ по иконке в очереди: сортировка.</p>
 
@@ -415,73 +449,10 @@ export function LeftGamePanel(props: LeftGamePanelProps) {
                         onUnitRename={props.onUnitRename}
                         onDropDeckCard={props.onApplyDeckCardToUnit}
                         onHealDropToUnit={props.onHealDropToUnit}
+                        onWarehouseDropToUnit={props.onWarehouseDropToUnit}
+                        statsPlayer={statsPlayer}
                     />
                 ))}
-            </div>
-
-            <h2>Склад</h2>
-            <div className="resource-grid">
-                <div className="resource-col">
-                    <div className="resource-title">{statsPlayerName}</div>
-
-                    <div className="resource-row">
-                        <span>🌲</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.trees ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'trees', 1)}>+
-                        </button>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'trees', -1)}>-
-                        </button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>🃏R</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.redJokers ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'redJokers', 1)}>+
-                        </button>
-                        <button className="sbtn"
-                                onClick={() => props.onResourceChange(statsPlayer, 'redJokers', -1)}>-
-                        </button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>🃏B</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.blackJokers ?? 0}</strong>
-                        <button className="sbtn"
-                                onClick={() => props.onResourceChange(statsPlayer, 'blackJokers', 1)}>+
-                        </button>
-                        <button className="sbtn"
-                                onClick={() => props.onResourceChange(statsPlayer, 'blackJokers', -1)}>-
-                        </button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>❤️</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.heal ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'heal', 1)}>+</button>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'heal', -1)}>-</button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>🔃</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.buffDebuff ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'buffDebuff', 1)}>+</button>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'buffDebuff', -1)}>-</button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>🎭</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.provocation ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'provocation', 1)}>+</button>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'provocation', -1)}>-</button>
-                    </div>
-
-                    <div className="resource-row">
-                        <span>🗡️</span>
-                        <strong>{extras?.resources?.[statsPlayer]?.egoStrike ?? 0}</strong>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'egoStrike', 1)}>+</button>
-                        <button className="sbtn" onClick={() => props.onResourceChange(statsPlayer, 'egoStrike', -1)}>-</button>
-                    </div>
-                </div>
             </div>
 
             <p className="muted">Активный игрок: {activePlayerName}</p>

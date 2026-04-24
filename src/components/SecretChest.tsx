@@ -87,21 +87,21 @@ const SECRET_MAP: Record<SecretType, SecretDef> = {
 }
 
 const STAGE_1_TABLE: WeightedSecret[] = [
-  { type: 'buff', chance: 25 },
-  { type: 'debuff', chance: 25 },
+  { type: 'buff', chance: 30 },
+  { type: 'debuff', chance: 15 },
   { type: 'buffdebuff', chance: 10 },
   { type: 'teleport', chance: 5 },
-  { type: 'heal', chance: 15 },
+  { type: 'heal', chance: 20 },
   { type: 'poison', chance: 15 },
   { type: 'camp', chance: 5 },
 ]
 
 const STAGE_2_3_TABLE: WeightedSecret[] = [
-  { type: 'buff', chance: 20 },
-  { type: 'debuff', chance: 20 },
+  { type: 'buff', chance: 25 },
+  { type: 'debuff', chance: 10 },
   { type: 'buffdebuff', chance: 10 },
   { type: 'teleport', chance: 5 },
-  { type: 'heal', chance: 10 },
+  { type: 'heal', chance: 15 },
   { type: 'poison', chance: 10 },
   { type: 'camp', chance: 5 },
   { type: 'provocation', chance: 10 },
