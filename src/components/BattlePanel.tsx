@@ -116,7 +116,6 @@ function calculateDamage(
 export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps) => {
 
     const dropPopupRef = useRef<RandomDropPopupRef>(null);
-    // Единый ref для всех таймаутов смены фазы — чтобы не накапливались
     const phaseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const schedulePhase = (fn: () => void, delay: number) => {
@@ -235,6 +234,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
         // Задержка между шагами — чтобы игрок видел что происходит
         const DELAY = 1200;
 
+        // [1] когда из колеса выпадает контратака(повторныйй запуск колеса)
         if (phase === 'waiting-wheel' && wheelResultForAutoBattle === 'counter-a') {
             autoBattleActionFiredRef.current = true;
             setWheelResultForAutoBattle(null);
@@ -246,6 +246,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return;
         }
 
+        // [2] кнопка, чтобы показать монету(нажатие на кнопку "бросить монету")
         if (phase === 'selecting-attacker' && isMonsterTurn){
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -254,6 +255,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return;
         }
 
+        // [3] бросок кубика d6 для выбора кто будет атаковать
         if (phase === 'selecting-attacker' && d6AttackerCandidates.length === 0) {
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -262,6 +264,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return
         }
 
+        // [4] выбор кто будет атаковать, когда кубиков несколько
         if (phase === 'selecting-attacker' && d6AttackerCandidates.length > 0) {
             autoBattleActionFiredRef.current = true;
             // Автовыбор атакующего — с максимальной атакой
@@ -278,6 +281,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return
         }
 
+        // [5] выбор цели нападения
         if (phase === 'selecting-defender') {
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -294,6 +298,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return
         }
 
+        // [6] сам бросок монеты
         if (phase === 'monster-coin') {
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -303,6 +308,7 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return;
         }
 
+        // [7] нажатие на кнопку атаковать, когда не нужно или уже не нужно бросать d100 для крит. урона
         if (showAttackButton && (wheelResult !== 'Крит. урон' || d100Result !== null)){
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -311,7 +317,8 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             }, DELAY);
             return
         }
-        console.log(phase, wheelResultForAutoBattle)
+
+        // [8] Бросок d100 для крит урона
         if (phase === 'waiting-wheel' && wheelResultForAutoBattle === 'crit') {
             autoBattleActionFiredRef.current = true;
             schedulePhase(() => {
@@ -324,12 +331,14 @@ export const BattlePanel: React.FC<BattlePanelProps> = (props: BattlePanelProps)
             return
         }
 
+        // [9] кручение колеса битвы
         if (phase === 'waiting-wheel') {
             // autoBattleActionFiredRef.current = true;
             setStartBattleWheel(true);
             return;
         }
 
+        // [10] игнор фаз где нужно дождаться конца
         if (phase === 'rolling-d6' || phase === 'executing-attack') {
             // Эти фазы — анимация, ничего делать не нужно
             return;

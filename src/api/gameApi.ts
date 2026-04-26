@@ -1,5 +1,15 @@
 import type { Game, GameSummary } from '../types';
 
+export class SaveConflictError extends Error {
+    latestGame: Game;
+
+    constructor(latestGame: Game) {
+        super('Save conflict');
+        this.name = 'SaveConflictError';
+        this.latestGame = latestGame;
+    }
+}
+
 export const API = {
     baseUrl: import.meta.env.VITE_API_BASE_URL ?? window.location.origin,
 
@@ -34,14 +44,24 @@ export const API = {
         return (await response.json()) as { message: string; id: string };
     },
 
-    async saveGame(game: Game): Promise<{ message: string }> {
+    async saveGame(game: Game, baseRevision: number): Promise<Game> {
         const response = await fetch(`${this.baseUrl}/api/games/${encodeURIComponent(game.name)}`, {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Base-Revision': String(baseRevision),
+            },
             body: JSON.stringify(game)
         });
+        if (response.status === 409) {
+            const payload = (await response.json()) as { game?: Game };
+            if (payload.game) throw new SaveConflictError(payload.game);
+            throw new Error('Save conflict');
+        }
         if (!response.ok) throw new Error('Failed to save game');
-        return (await response.json()) as { message: string };
+        const payload = (await response.json()) as { game?: Game };
+        if (!payload.game) throw new Error('Invalid save response');
+        return payload.game;
     },
 
     async joinGame(gameName: string, color: string): Promise<{ message: string; game: Game }> {

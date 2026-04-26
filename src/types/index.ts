@@ -84,6 +84,7 @@ export interface Game {
   events: GameEvent[];
   extras?: GameExtras;
   updatedAt?: number;
+  revision?: number;
   winner?: PlayerKey | 'tie';
 }
 

@@ -2,8 +2,8 @@
   "id": "game_1776540369653_b2va37qbe",
   "name": "Klimaks",
   "maxTurns": 120,
-  "currentTurn": 52,
-  "currentPlayer": "player1",
+  "currentTurn": 53,
+  "currentPlayer": "player2",
   "status": "active",
   "createdAt": 1776540369653,
   "numCharacters": 5,
@@ -11,20 +11,20 @@
     "color": "#c0392b",
     "name": "Игрок 1",
     "captures": {
-      "normal": 72,
+      "normal": 65,
       "permanent": 43
     },
-    "territory": 119,
+    "territory": 112,
     "capturePoints": 10
   },
   "player2": {
     "color": "#2980b9",
-    "name": "psd",
+    "name": "uyr",
     "captures": {
-      "normal": 87,
+      "normal": 105,
       "permanent": 110
     },
-    "territory": 201,
+    "territory": 219,
     "capturePoints": 10
   },
   "board": [
@@ -862,7 +862,10 @@
         "x": 21,
         "y": 3,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1474,7 +1477,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1482,28 +1485,40 @@
         "x": 13,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 14,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 15,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 16,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1520,14 +1535,20 @@
         "x": 18,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 19,
         "y": 6,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1691,7 +1712,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1699,7 +1720,10 @@
         "x": 13,
         "y": 7,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1708,7 +1732,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1718,7 +1742,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1909,7 +1933,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1919,7 +1943,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1929,7 +1953,7 @@
         "type": "plain",
         "capture": {
           "type": "normal",
-          "player": "player1"
+          "player": "player2"
         },
         "object": null
       },
@@ -1937,14 +1961,20 @@
         "x": 15,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
         "x": 16,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -1961,7 +1991,10 @@
         "x": 18,
         "y": 8,
         "type": "plain",
-        "capture": null,
+        "capture": {
+          "type": "normal",
+          "player": "player2"
+        },
         "object": null
       },
       {
@@ -2137,22 +2170,14 @@
         "y": 9,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "rock",
-          "placedAt": 1776541046574,
-          "placedBy": "player2"
-        }
+        "object": null
       },
       {
         "x": 14,
         "y": 9,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "rock",
-          "placedAt": 1776541054986,
-          "placedBy": "player2"
-        }
+        "object": null
       },
       {
         "x": 15,
@@ -2355,22 +2380,14 @@
         "y": 10,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "rock",
-          "placedAt": 1776541055267,
-          "placedBy": "player2"
-        }
+        "object": null
       },
       {
         "x": 15,
         "y": 10,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "rock",
-          "placedAt": 1776541055469,
-          "placedBy": "player2"
-        }
+        "object": null
       },
       {
         "x": 16,
@@ -2985,11 +3002,7 @@
         "y": 13,
         "type": "plain",
         "capture": null,
-        "object": {
-          "type": "rock",
-          "placedAt": 1776541056547,
-          "placedBy": "player2"
-        }
+        "object": null
       },
       {
         "x": 12,
@@ -3043,7 +3056,11 @@
         "y": 13,
         "type": "plain",
         "capture": null,
-        "object": null
+        "object": {
+          "type": "rock",
+          "placedAt": 1777064475672,
+          "placedBy": "player2"
+        }
       },
       {
         "x": 18,
@@ -5183,7 +5200,7 @@
       "x": 3,
       "y": 13,
       "name": "Капибыра",
-      "hp": 0,
+      "hp": 18,
       "maxHp": 18,
       "attack": 6,
       "defense": 0,
@@ -5193,7 +5210,7 @@
         "camp": 1,
         "returnStone": 0
       },
-      "alive": false
+      "alive": true
     },
     {
       "id": "p1_unit_1",
@@ -5204,7 +5221,7 @@
       "x": 7,
       "y": 10,
       "name": "Пипи",
-      "hp": 0,
+      "hp": 40,
       "maxHp": 40,
       "attack": 6,
       "defense": 0,
@@ -5214,7 +5231,7 @@
         "camp": 1,
         "returnStone": 0
       },
-      "alive": false
+      "alive": true
     },
     {
       "id": "p1_unit_2",
@@ -5225,7 +5242,7 @@
       "x": 1,
       "y": 14,
       "name": "Пуль",
-      "hp": 0,
+      "hp": 17,
       "maxHp": 17,
       "attack": 24,
       "defense": 0,
@@ -5235,7 +5252,7 @@
         "camp": 0,
         "returnStone": 0
       },
-      "alive": false
+      "alive": true
     },
     {
       "id": "p1_unit_3",
@@ -5246,7 +5263,7 @@
       "x": 5,
       "y": 12,
       "name": "Рюмпик",
-      "hp": 0,
+      "hp": 29,
       "maxHp": 29,
       "attack": 9,
       "defense": 0,
@@ -5256,7 +5273,7 @@
         "camp": 0,
         "returnStone": 0
       },
-      "alive": false
+      "alive": true
     },
     {
       "id": "p1_unit_4",
@@ -5267,7 +5284,7 @@
       "x": 6,
       "y": 15,
       "name": "Ботя",
-      "hp": 0,
+      "hp": 8,
       "maxHp": 22,
       "attack": 5,
       "defense": 0,
@@ -5277,21 +5294,21 @@
         "camp": 0,
         "returnStone": 0
       },
-      "alive": false
+      "alive": true
     },
     {
       "id": "p2_unit_0",
       "player": "player2",
       "type": "character",
       "emoji": "🙂",
-      "x": 21,
-      "y": 2,
+      "x": 12,
+      "y": 8,
       "name": "ДИОльфинио",
       "hp": 100,
       "maxHp": 100,
-      "attack": 5,
-      "defense": 100,
-      "capture": 100,
+      "attack": 95,
+      "defense": 17,
+      "capture": 82,
       "items": {
         "teleport": 2,
         "camp": 0,
@@ -5308,9 +5325,9 @@
       "x": 12,
       "y": 1,
       "name": "Киточад",
-      "hp": 81,
+      "hp": 70,
       "maxHp": 100,
-      "attack": 98,
+      "attack": 100,
       "defense": 0,
       "capture": 14,
       "items": {
@@ -5329,10 +5346,10 @@
       "x": 22,
       "y": 1,
       "name": "Очко Саурона",
-      "hp": 86,
-      "maxHp": 86,
-      "attack": 5,
-      "defense": 19,
+      "hp": 59,
+      "maxHp": 107,
+      "attack": 100,
+      "defense": 12,
       "capture": 12,
       "items": {
         "teleport": 0,
@@ -5350,17 +5367,17 @@
       "x": 23,
       "y": 1,
       "name": "Седой Онанист",
-      "hp": 14,
-      "maxHp": 14,
-      "attack": 9,
+      "hp": 0,
+      "maxHp": 100,
+      "attack": 108,
       "defense": 0,
-      "capture": 0,
+      "capture": 11,
       "items": {
         "teleport": 1,
         "camp": 1,
         "returnStone": 0
       },
-      "alive": true,
+      "alive": false,
       "icon": "/assets/characters/icon_1776540444212_icbysv4i.png"
     },
     {
@@ -5371,9 +5388,9 @@
       "x": 23,
       "y": 0,
       "name": "Глыбус",
-      "hp": 12,
-      "maxHp": 12,
-      "attack": 9,
+      "hp": 41,
+      "maxHp": 101,
+      "attack": 100,
       "defense": 0,
       "capture": 1,
       "items": {
@@ -5387,12 +5404,6 @@
   ],
   "objects": [],
   "events": [
-    {
-      "type": "dice",
-      "message": "player1 бросил набор кубиков: [4, 4, 6], Σ=14",
-      "player": "player1",
-      "timestamp": 1776686295400
-    },
     {
       "type": "dice",
       "message": "player1 бросил набор кубиков: [2, 6, 2], Σ=10",
@@ -5986,6 +5997,12 @@
       "message": "player1 открыл сундук: Лечение",
       "player": "player1",
       "timestamp": 1776861023914
+    },
+    {
+      "type": "dice",
+      "message": "player2 бросил набор кубиков: [2, 3], Σ=5",
+      "player": "player2",
+      "timestamp": 1777064424678
     }
   ],
   "extras": {
@@ -6010,7 +6027,7 @@
         "trees": 0,
         "redJokers": 0,
         "blackJokers": 0,
-        "heal": 0,
+        "heal": 1,
         "buffDebuff": 0,
         "provocation": 0,
         "egoStrike": 0
@@ -6019,7 +6036,7 @@
         "trees": 0,
         "redJokers": 1,
         "blackJokers": 2,
-        "heal": 3,
+        "heal": 4,
         "buffDebuff": 5,
         "provocation": 2,
         "egoStrike": 2
@@ -6027,72 +6044,12 @@
     },
     "monster": {
       "name": "Монстр",
-      "hp": 19,
-      "attack": 14,
+      "hp": 0,
+      "attack": 30,
       "defense": 0
     },
     "deck": {
       "remaining": [
-        {
-          "id": "2_clubs",
-          "label": "2♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "7_diamonds",
-          "label": "7♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "J_clubs",
-          "label": "J♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "5_hearts",
-          "label": "5♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "8_diamonds",
-          "label": "8♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
-        {
-          "id": "4_clubs",
-          "label": "4♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "6_spades",
-          "label": "6♠",
-          "suit": "spades",
-          "color": "black"
-        },
-        {
-          "id": "10_clubs",
-          "label": "10♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "2_hearts",
-          "label": "2♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "J_diamonds",
-          "label": "J♦",
-          "suit": "diamonds",
-          "color": "red"
-        },
         {
           "id": "Q_spades",
           "label": "Q♠",
@@ -6358,70 +6315,70 @@
           "label": "A♠",
           "suit": "spades",
           "color": "black"
-        }
-      ],
-      "current": null,
-      "history": [
-        {
-          "id": "10_diamonds",
-          "label": "10♦",
-          "suit": "diamonds",
-          "color": "red"
         },
         {
-          "id": "5_clubs",
-          "label": "5♣",
+          "id": "2_clubs",
+          "label": "2♣",
           "suit": "clubs",
           "color": "black"
         },
         {
-          "id": "7_clubs",
-          "label": "7♣",
-          "suit": "clubs",
-          "color": "black"
-        },
-        {
-          "id": "8_hearts",
-          "label": "8♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "Q_hearts",
-          "label": "Q♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "7_hearts",
-          "label": "7♥",
-          "suit": "hearts",
-          "color": "red"
-        },
-        {
-          "id": "2_diamonds",
-          "label": "2♦",
+          "id": "7_diamonds",
+          "label": "7♦",
           "suit": "diamonds",
           "color": "red"
         },
         {
-          "id": "6_hearts",
-          "label": "6♥",
+          "id": "J_clubs",
+          "label": "J♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "5_hearts",
+          "label": "5♥",
           "suit": "hearts",
           "color": "red"
         },
         {
-          "id": "7_spades",
-          "label": "7♠",
+          "id": "8_diamonds",
+          "label": "8♦",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "4_clubs",
+          "label": "4♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "6_spades",
+          "label": "6♠",
           "suit": "spades",
           "color": "black"
         },
         {
-          "id": "3_hearts",
-          "label": "3♥",
+          "id": "10_clubs",
+          "label": "10♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "2_hearts",
+          "label": "2♥",
           "suit": "hearts",
           "color": "red"
         },
+        {
+          "id": "J_diamonds",
+          "label": "J♦",
+          "suit": "diamonds",
+          "color": "red"
+        }
+      ],
+      "current": null,
+      "history": [
         {
           "id": "6_diamonds",
           "label": "6♦",
@@ -6432,13 +6389,13 @@
           "id": "4_hearts",
           "label": "4♥",
           "suit": "hearts",
-          "color": "red"
+          "color": "black"
         },
         {
           "id": "6_clubs",
           "label": "6♣",
           "suit": "clubs",
-          "color": "black"
+          "color": "red"
         },
         {
           "id": "3_diamonds",
@@ -6455,20 +6412,20 @@
         {
           "id": "8_spades",
           "label": "8♠",
-          "suit": "spades",
+          "suit": "clubs",
           "color": "black"
         },
         {
           "id": "3_clubs",
           "label": "3♣",
-          "suit": "clubs",
-          "color": "black"
+          "suit": "hearts",
+          "color": "red"
         },
         {
           "id": "K_hearts",
           "label": "K♥",
           "suit": "hearts",
-          "color": "red"
+          "color": "black"
         },
         {
           "id": "2_spades",
@@ -6497,20 +6454,20 @@
         {
           "id": "9_hearts",
           "label": "9♥",
-          "suit": "hearts",
+          "suit": "diamonds",
           "color": "red"
         },
         {
           "id": "5_diamonds",
           "label": "5♦",
-          "suit": "diamonds",
+          "suit": "hearts",
           "color": "red"
         },
         {
           "id": "10_hearts",
           "label": "10♥",
           "suit": "hearts",
-          "color": "red"
+          "color": "black"
         },
         {
           "id": "K_spades",
@@ -6521,13 +6478,13 @@
         {
           "id": "3_spades",
           "label": "3♠",
-          "suit": "spades",
+          "suit": "clubs",
           "color": "black"
         },
         {
           "id": "K_clubs",
           "label": "K♣",
-          "suit": "clubs",
+          "suit": "spades",
           "color": "black"
         },
         {
@@ -6539,30 +6496,129 @@
         {
           "id": "A_spades",
           "label": "A♠",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "2_clubs",
+          "label": "2♣",
+          "suit": "diamonds",
+          "color": "red"
+        },
+        {
+          "id": "7_diamonds",
+          "label": "7♦",
+          "suit": "diamonds",
+          "color": "black"
+        },
+        {
+          "id": "J_clubs",
+          "label": "J♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "5_hearts",
+          "label": "5♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "8_diamonds",
+          "label": "8♦",
+          "suit": "diamonds",
+          "color": "black"
+        },
+        {
+          "id": "4_clubs",
+          "label": "4♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "6_spades",
+          "label": "6♠",
           "suit": "spades",
           "color": "black"
+        },
+        {
+          "id": "10_clubs",
+          "label": "10♣",
+          "suit": "clubs",
+          "color": "black"
+        },
+        {
+          "id": "2_hearts",
+          "label": "2♥",
+          "suit": "hearts",
+          "color": "red"
+        },
+        {
+          "id": "J_diamonds",
+          "label": "J♦",
+          "suit": "diamonds",
+          "color": "red"
         }
       ]
     },
     "moveState": {
-      "turnKey": "player1:52",
+      "turnKey": "player2:53",
       "byUnit": {
-        "p1_unit_2": {
+        "p2_unit_0": {
           "start": {
-            "x": 1,
-            "y": 13
+            "x": 21,
+            "y": 2
           },
-          "captured": []
-        },
-        "p1_unit_3": {
-          "start": {
-            "x": 6,
-            "y": 12
-          },
-          "captured": []
+          "captured": [
+            {
+              "x": 21,
+              "y": 3
+            },
+            {
+              "x": 19,
+              "y": 6
+            },
+            {
+              "x": 18,
+              "y": 6
+            },
+            {
+              "x": 18,
+              "y": 8
+            },
+            {
+              "x": 16,
+              "y": 6
+            },
+            {
+              "x": 16,
+              "y": 8
+            },
+            {
+              "x": 15,
+              "y": 8
+            },
+            {
+              "x": 15,
+              "y": 6
+            },
+            {
+              "x": 14,
+              "y": 6
+            },
+            {
+              "x": 13,
+              "y": 7
+            },
+            {
+              "x": 13,
+              "y": 6
+            }
+          ]
         }
       }
     }
   },
-  "updatedAt": 1776951952116
+  "updatedAt": 1777065360223,
+  "revision": 216
 }

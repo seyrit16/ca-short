@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { API } from './api/gameApi'
+import { API, SaveConflictError } from './api/gameApi'
 import { BoardPanel } from './components/BoardPanel'
 import { HomeScreen } from './components/HomeScreen'
 import { LeftGamePanel } from './components/LeftGamePanel'
@@ -8,6 +8,7 @@ import { RightUtilityPanel } from './components/RightUtilityPanel'
 import { objectTools } from './constants/ui'
 import type { CaptureMode, DeckCard, Game, GameSummary, ObjectType, PlayerKey, Position, ToolType } from './types'
 import { GameUtils } from './utils/gameUtils'
+import { applyGamePatch, createGamePatch, type GamePatchOp } from './utils/syncOps'
 import './styles/theme.css'
 import './styles/layout.css'
 import './styles/panels.css'
@@ -65,7 +66,7 @@ function App() {
   const [topNotice, setTopNotice] = useState('')
   const [lastSeenEventTs, setLastSeenEventTs] = useState(0)
   const gameRef = useRef<Game | null>(null)
-  const pendingMutationsRef = useRef<Array<(draft: Game) => boolean>>([])
+  const pendingPatchesRef = useRef<GamePatchOp[][]>([])
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isFlushingSaveRef = useRef(false)
   const [isBoard, setIsBoard] = useState(true)
@@ -135,6 +136,7 @@ function App() {
             type?: string
             gameName?: string
             game?: Game
+            revision?: number
           }
 
           if (payload.type === 'game:deleted' && payload.gameName === gameName) {
@@ -146,14 +148,20 @@ function App() {
 
           if (payload.type !== 'game:update' || payload.gameName !== gameName || !payload.game) return
           payload.game.extras = GameUtils.ensureExtras(payload.game)
+          const incomingRevision = payload.game.revision ?? payload.revision ?? 0
 
           setGame((prev) => {
             if (!prev) return payload.game as Game
-            if (pendingMutationsRef.current.length === 0) return payload.game as Game
-            const prevUpdated = prev.updatedAt ?? 0
-            const nextUpdated = payload.game?.updatedAt ?? 0
-            if (nextUpdated > prevUpdated) return payload.game as Game
-            return prev
+            const prevRevision = prev.revision ?? 0
+            if (incomingRevision <= prevRevision) return prev
+            if (pendingPatchesRef.current.length === 0) return payload.game as Game
+            const rebased = cloneGame(payload.game as Game)
+            rebased.extras = GameUtils.ensureExtras(rebased)
+            pendingPatchesRef.current.forEach((patch) => {
+              applyGamePatch(rebased, patch)
+            })
+            rebased.extras = GameUtils.ensureExtras(rebased)
+            return rebased
           })
         } catch {
           // no-op
@@ -411,7 +419,7 @@ function App() {
         return
       }
       loaded.extras = GameUtils.ensureExtras(loaded)
-      pendingMutationsRef.current = []
+      pendingPatchesRef.current = []
       setGame(loaded)
       setCurrentPlayer(parsed.player)
       setStatsPlayer(parsed.player)
@@ -433,18 +441,35 @@ function App() {
   function normalizeGameForSave(nextGame: Game): Game {
     const draft = cloneGame(nextGame)
     draft.extras = GameUtils.ensureExtras(draft)
-    draft.updatedAt = Date.now()
     return draft
+  }
+
+  function rebaseWithPatches(baseGame: Game, patches: GamePatchOp[][]): Game {
+    const rebased = cloneGame(baseGame)
+    rebased.extras = GameUtils.ensureExtras(rebased)
+    patches.forEach((patch) => {
+      if (patch.length === 0) return
+      applyGamePatch(rebased, patch)
+    })
+    rebased.extras = GameUtils.ensureExtras(rebased)
+    return rebased
   }
 
   async function flushPendingSaves(): Promise<void> {
     if (isFlushingSaveRef.current) return
     isFlushingSaveRef.current = true
+    const MAX_REBASE_ATTEMPTS = 12
+    let attempts = 0
 
     try {
-      while (pendingMutationsRef.current.length > 0) {
-        const queuedMutations = [...pendingMutationsRef.current]
-        pendingMutationsRef.current = []
+      while (pendingPatchesRef.current.length > 0) {
+        if (attempts >= MAX_REBASE_ATTEMPTS) {
+          showError('Слишком много конфликтов сохранения, попробуйте еще раз')
+          break
+        }
+
+        const queuedPatches = [...pendingPatchesRef.current]
+        pendingPatchesRef.current = []
         const currentGame = gameRef.current
         if (!currentGame) break
 
@@ -455,25 +480,30 @@ function App() {
             break
           }
           latest.extras = GameUtils.ensureExtras(latest)
-          const merged = cloneGame(latest)
-          merged.extras = GameUtils.ensureExtras(merged)
+          const merged = rebaseWithPatches(latest, queuedPatches)
 
-          let changed = false
-          queuedMutations.forEach((mutate) => {
-            changed = mutate(merged) || changed
-          })
-
-          if (!changed) {
+          const hasLocalChanges = queuedPatches.some((patch) => patch.length > 0)
+          if (!hasLocalChanges) {
             setGame(latest)
             continue
           }
 
           const normalized = normalizeGameForSave(merged)
-          await API.saveGame(normalized)
-          setGame(normalized)
-        } catch {
+          const saved = await API.saveGame(normalized, latest.revision ?? 1)
+          saved.extras = GameUtils.ensureExtras(saved)
+          setGame(saved)
+          attempts = 0
+        } catch (err) {
+          if (err instanceof SaveConflictError) {
+            const latestGame = err.latestGame
+            latestGame.extras = GameUtils.ensureExtras(latestGame)
+            setGame(rebaseWithPatches(latestGame, queuedPatches))
+            pendingPatchesRef.current = [...queuedPatches, ...pendingPatchesRef.current]
+            attempts += 1
+            continue
+          }
           showError('Не удалось сохранить игру')
-          pendingMutationsRef.current = [...queuedMutations, ...pendingMutationsRef.current]
+          pendingPatchesRef.current = [...queuedPatches, ...pendingPatchesRef.current]
           break
         }
       }
@@ -497,8 +527,21 @@ function App() {
     await flushPendingSaves()
 
     const normalized = normalizeGameForSave(nextGame)
-    setGame(normalized)
-    await API.saveGame(normalized)
+    const baseRevision = gameRef.current?.revision ?? nextGame.revision ?? 1
+    setGame({ ...normalized, revision: baseRevision, updatedAt: Date.now() })
+
+    try {
+      const saved = await API.saveGame(normalized, baseRevision)
+      saved.extras = GameUtils.ensureExtras(saved)
+      setGame(saved)
+    } catch (err) {
+      if (err instanceof SaveConflictError) {
+        const latest = err.latestGame
+        latest.extras = GameUtils.ensureExtras(latest)
+        setGame(latest)
+      }
+      throw err
+    }
   }
 
   function updateLocal(updater: (draft: Game) => boolean): void {
@@ -509,8 +552,10 @@ function App() {
     const changed = updater(draft)
     if (!changed) return
     const normalized = normalizeGameForSave(draft)
-    setGame(normalized)
-    pendingMutationsRef.current.push(updater)
+    const patch = createGamePatch(base, normalized)
+    if (patch.length === 0) return
+    setGame({ ...normalized, revision: base.revision ?? 1, updatedAt: Date.now() })
+    pendingPatchesRef.current.push(patch)
     queueSave()
   }
 
@@ -528,19 +573,21 @@ function App() {
         created.player1.name = nextPlayer1Name
       }
       created.extras = GameUtils.ensureExtras(created)
-      created.updatedAt = Date.now()
       await API.createGame(created)
-      pendingMutationsRef.current = []
-      setGame(created)
+      const loadedCreated = await API.getGame(created.name)
+      const createdGame = loadedCreated ?? created
+      createdGame.extras = GameUtils.ensureExtras(createdGame)
+      pendingPatchesRef.current = []
+      setGame(createdGame)
       setCurrentPlayer('player1')
       setStatsPlayer('player1')
       setLastSeenEventTs(Date.now())
       setSelectedUnitId(null)
       setPathCells([])
       setViewMode('game')
-      saveSession(created.name, 'player1')
+      saveSession(createdGame.name, 'player1')
       await loadGames()
-      showNotice(`Игра "${created.name}" создана`)
+      showNotice(`Игра "${createdGame.name}" создана`)
     } catch (err) {
       showError(err instanceof Error ? err.message : 'Не удалось создать игру')
     }
@@ -579,12 +626,14 @@ function App() {
       }
 
       if (renamed) {
-        nextGame.updatedAt = Date.now()
-        await API.saveGame(nextGame)
+        const normalized = normalizeGameForSave(nextGame)
+        const saved = await API.saveGame(normalized, nextGame.revision ?? 1)
+        saved.extras = GameUtils.ensureExtras(saved)
+        nextGame = saved
       }
 
       setGame(nextGame)
-      pendingMutationsRef.current = []
+      pendingPatchesRef.current = []
       setCurrentPlayer(asPlayer)
       setStatsPlayer(asPlayer)
       setLastSeenEventTs(Date.now())
@@ -600,7 +649,7 @@ function App() {
 
   function handleBackHome(): void {
     finalizePendingMovement()
-    pendingMutationsRef.current = []
+    pendingPatchesRef.current = []
     setViewMode('home')
     clearSession()
   }
@@ -1061,18 +1110,19 @@ function App() {
             })()
 
       if (attackerAttack === null) return false
+      const attackerPower = attackerAttack
 
       let totalDamage =
-        payload.mode === 'crit' ? Math.round(attackerAttack * (1 + crit / 100)) : Math.max(0, attackerAttack)
+        payload.mode === 'crit' ? Math.round(attackerPower * (1 + crit / 100)) : Math.max(0, attackerPower)
 
       function applyDamageToStats(target: { hp: number; defense: number }): void {
         if(payload.mode === 'blocking'){
-          totalDamage = attackerAttack - target.defense/2;
+          totalDamage = attackerPower - target.defense/2;
           if (totalDamage < 0){
             return;
           }
           target.hp = Math.max(0, target.hp - totalDamage)
-          console.log(`aa=${attackerAttack}, d=${target.defense}, td=${totalDamage}`)
+          console.log(`aa=${attackerPower}, d=${target.defense}, td=${totalDamage}`)
           return;
         }
         if (payload.mode === 'vulnerable') {
@@ -1453,3 +1503,4 @@ function App() {
 }
 
 export default App
+

@@ -51,6 +51,7 @@ function broadcastGameUpdate(gameName, game) {
     type: 'game:update',
     gameName,
     game,
+    revision: game?.revision ?? 0,
     updatedAt: game?.updatedAt ?? Date.now(),
   })
 }
@@ -85,6 +86,14 @@ async function ensureUploadsDir() {
 function getGamePath(gameName) {
   const safeName = gameName.replace(/[^a-zA-Z0-9_-]/g, '_')
   return path.join(GAMES_DIR, `${safeName}.json`)
+}
+
+function ensureGameMeta(game) {
+  if (!game || typeof game !== 'object') return game
+  const rawRevision = Number(game.revision)
+  game.revision = Number.isFinite(rawRevision) && rawRevision > 0 ? Math.floor(rawRevision) : 1
+  if (!Number.isFinite(Number(game.updatedAt))) game.updatedAt = Date.now()
+  return game
 }
 
 app.get('/api/games', async (req, res) => {
@@ -123,7 +132,8 @@ app.get('/api/games/:name', async (req, res) => {
   try {
     const gamePath = getGamePath(decodeURIComponent(req.params.name))
     const content = await fs.readFile(gamePath, 'utf8')
-    res.json(JSON.parse(content))
+    const game = ensureGameMeta(JSON.parse(content))
+    res.json(game)
   } catch (error) {
     if (error.code === 'ENOENT') {
       res.status(404).json({ error: 'Game not found' })
@@ -136,6 +146,10 @@ app.get('/api/games/:name', async (req, res) => {
 app.post('/api/games', async (req, res) => {
   try {
     const game = req.body
+    if (!game || typeof game !== 'object') {
+      res.status(400).json({ error: 'Invalid game payload' })
+      return
+    }
     if (!game?.name) {
       res.status(400).json({ error: 'Game name is required' })
       return
@@ -151,6 +165,7 @@ app.post('/api/games', async (req, res) => {
       // no-op
     }
 
+    game.revision = 1
     game.updatedAt = Date.now()
     await fs.writeFile(gamePath, JSON.stringify(game, null, 2), 'utf8')
     broadcastGameUpdate(game.name, game)
@@ -164,12 +179,35 @@ app.put('/api/games/:name', async (req, res) => {
   try {
     const gameName = decodeURIComponent(req.params.name)
     const gamePath = getGamePath(gameName)
+    const baseRevision = Number(req.header('X-Base-Revision'))
+    if (!Number.isFinite(baseRevision)) {
+      res.status(400).json({ error: 'X-Base-Revision header is required' })
+      return
+    }
+
+    const currentRaw = await fs.readFile(gamePath, 'utf8')
+    const currentGame = ensureGameMeta(JSON.parse(currentRaw))
+    if (baseRevision !== currentGame.revision) {
+      res.status(409).json({ error: 'Revision conflict', game: currentGame })
+      return
+    }
+
     const game = req.body
+    if (!game || typeof game !== 'object') {
+      res.status(400).json({ error: 'Invalid game payload' })
+      return
+    }
+    game.name = gameName
+    game.revision = currentGame.revision + 1
     game.updatedAt = Date.now()
     await fs.writeFile(gamePath, JSON.stringify(game, null, 2), 'utf8')
     broadcastGameUpdate(gameName, game)
-    res.json({ message: 'Game saved' })
+    res.json({ message: 'Game saved', game })
   } catch (error) {
+    if (error.code === 'ENOENT') {
+      res.status(404).json({ error: 'Game not found' })
+      return
+    }
     res.status(500).json({ error: 'Failed to save game' })
   }
 })
@@ -195,7 +233,7 @@ app.post('/api/games/:name/join', async (req, res) => {
     const gameName = decodeURIComponent(req.params.name)
     const gamePath = getGamePath(gameName)
     const content = await fs.readFile(gamePath, 'utf8')
-    const game = JSON.parse(content)
+    const game = ensureGameMeta(JSON.parse(content))
 
     if (game.player2) {
       res.status(409).json({ error: 'Game is full' })
@@ -241,6 +279,7 @@ app.post('/api/games/:name/join', async (req, res) => {
       game.board[pos.y][pos.x].capture = { type: 'permanent', player: 'player2' }
     })
 
+    game.revision = game.revision + 1
     game.updatedAt = Date.now()
     await fs.writeFile(gamePath, JSON.stringify(game, null, 2), 'utf8')
     broadcastGameUpdate(gameName, game)
